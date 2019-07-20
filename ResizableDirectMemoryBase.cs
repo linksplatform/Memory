@@ -71,7 +71,6 @@ namespace Platform.Memory
             }
         }
 
-
         public long UsedCapacity
         {
             get

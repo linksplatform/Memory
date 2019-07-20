@@ -40,7 +40,7 @@ namespace Platform.Memory
 
             var size = FileHelpers.GetSize(Address);
 
-            ReservedCapacity = size > minimumReservedCapacity ? (size / minimumReservedCapacity + 1) * minimumReservedCapacity : minimumReservedCapacity;
+            ReservedCapacity = size > minimumReservedCapacity ? ((size / minimumReservedCapacity) + 1) * minimumReservedCapacity : minimumReservedCapacity;
             UsedCapacity = size;
         }
 
