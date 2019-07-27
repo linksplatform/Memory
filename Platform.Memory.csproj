@@ -22,6 +22,8 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageReleaseNotes>Platform.IO from 0.0.2 to 0.0.4
+Refactoring and issues fix.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
