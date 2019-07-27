@@ -48,10 +48,11 @@ namespace Platform.Memory
 
         public DirectMemoryAsArrayMemoryAdapter(IDirectMemory memory)
         {
-            _memory = memory;
-
-            if (_memory.Size % ElementSize > 0)
+            if (memory.Size % ElementSize > 0)
+            {
                 throw new ArgumentException("Memory is not aligned to element size.", nameof(memory));
+            }
+            _memory = memory;
         }
 
         #endregion

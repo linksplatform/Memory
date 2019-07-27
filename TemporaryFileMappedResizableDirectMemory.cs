@@ -33,9 +33,10 @@ namespace Platform.Memory
         protected override void DisposeCore(bool manual, bool wasDisposed)
         {
             base.DisposeCore(manual, wasDisposed);
-
             if (!wasDisposed)
+            {
                 File.Delete(Address);
+            }
         }
 
         #endregion

@@ -32,14 +32,15 @@ namespace Platform.Memory
         public FileMappedResizableDirectMemory(string address, long minimumReservedCapacity)
         {
             if (string.IsNullOrWhiteSpace(address))
+            {
                 throw new ArgumentOutOfRangeException(nameof(address));
+            }
             if (minimumReservedCapacity < MinimumCapacity)
+            {
                 minimumReservedCapacity = MinimumCapacity;
-
+            }
             Address = address;
-
             var size = FileHelpers.GetSize(Address);
-
             ReservedCapacity = size > minimumReservedCapacity ? ((size / minimumReservedCapacity) + 1) * minimumReservedCapacity : minimumReservedCapacity;
             UsedCapacity = size;
         }
@@ -56,33 +57,35 @@ namespace Platform.Memory
         private void MapFile(long capacity)
         {
             if (Pointer != IntPtr.Zero)
+            {
                 return;
-
+            }
             _file = MemoryMappedFile.CreateFromFile(Address, FileMode.Open, null, capacity, MemoryMappedFileAccess.ReadWrite);
             _accessor = _file.CreateViewAccessor();
             byte* pointer = null;
             _accessor.SafeMemoryMappedViewHandle.AcquirePointer(ref pointer);
-
             Pointer = new IntPtr(pointer);
         }
 
         private void UnmapFile()
         {
             if (UnmapFile(Pointer))
+            {
                 Pointer = IntPtr.Zero;
+            }
         }
 
         private bool UnmapFile(IntPtr pointer)
         {
             if (pointer == IntPtr.Zero)
+            {
                 return false;
-
+            }
             if (_accessor != null)
             {
                 _accessor.SafeMemoryMappedViewHandle.ReleasePointer();
                 Disposable.TryDispose(ref _accessor);
             }
-
             Disposable.TryDispose(ref _file);
             return true;
         }
@@ -94,16 +97,16 @@ namespace Platform.Memory
         protected override void OnReservedCapacityChanged(long oldReservedCapacity, long newReservedCapacity)
         {
             UnmapFile();
-
             FileHelpers.SetSize(Address, newReservedCapacity);
-
             MapFile(newReservedCapacity);
         }
 
         protected override void DisposePointer(IntPtr pointer, long size)
         {
             if (UnmapFile(pointer))
+            {
                 FileHelpers.SetSize(Address, size);
+            }
         }
 
         #endregion

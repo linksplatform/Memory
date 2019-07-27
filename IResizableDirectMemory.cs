@@ -50,7 +50,7 @@
         /// Рекомендуется уменьшать фактический размер блока памяти до используемого размера (указанного в этом свойстве) после завершения использования блока памяти.
         /// </remarks>
         /// <exception cref="ObjectDisposedException">The memory block is disposed. Блок памяти уже высвобожден.</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Attempted to set the used capacity to a value that is greater than the reserved capacity. Была выполнена попытка установить используемую емкость на значение, которое больше, чем зарезервированная емкость.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Attempted to set the used capacity to a value that is greater than the reserved capacity or less than zero. Была выполнена попытка установить используемую емкость на значение, которое больше, чем зарезервированная емкость или меньше нуля.</exception>
         long UsedCapacity { get; set; }
     }
 }

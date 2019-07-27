@@ -8,9 +8,6 @@ namespace Platform.Memory
     /// Represents a memory block allocated in Heap.
     /// Представляет блок памяти, выделенный в "куче".
     /// </summary>
-    /// <remarks>
-    /// TODO: Реализовать вариант с Virtual Memory
-    /// </remarks>
     public unsafe class HeapResizableDirectMemory : ResizableDirectMemoryBase
     {
         #region DisposableBase Properties
@@ -24,8 +21,9 @@ namespace Platform.Memory
         public HeapResizableDirectMemory(long minimumReservedCapacity)
         {
             if (minimumReservedCapacity < MinimumCapacity)
+            {
                 minimumReservedCapacity = MinimumCapacity;
-
+            }
             ReservedCapacity = minimumReservedCapacity;
             UsedCapacity = 0;
         }
@@ -48,7 +46,10 @@ namespace Platform.Memory
                 Pointer = Marshal.AllocHGlobal(new IntPtr(newReservedCapacity));
                 MemoryHelpers.ZeroMemory(Pointer.ToPointer(), newReservedCapacity);
             }
-            else Pointer = Marshal.ReAllocHGlobal(Pointer, new IntPtr(newReservedCapacity));
+            else
+            {
+                Pointer = Marshal.ReAllocHGlobal(Pointer, new IntPtr(newReservedCapacity));
+            }
         }
 
         #endregion
