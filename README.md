@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9aaabf24441141439ea8419c71484feb)](https://app.codacy.com/app/drakonard/Memory?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Memory&utm_campaign=Badge_Grade_Dashboard)
 [![CodeFactor](https://www.codefactor.io/repository/github/linksplatform/memory/badge)](https://www.codefactor.io/repository/github/linksplatform/memory)
 
 # Memory
