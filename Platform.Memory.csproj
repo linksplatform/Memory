@@ -13,7 +13,7 @@
     <PackageTags>LinksPlatform;Memory;IMemory;IDirectMemory;IArrayMemory;IResizableDirectMemory;Memory Mapped Files;Storage</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/0a9177c11892ebb2fe467dc3ea9eaf5a5588f610/doc/Avatar-rainbow.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/Konard/LinksPlatform/tree/master/Platform/Platform.Memory</PackageProjectUrl>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/Konard/LinksPlatform/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/linksplatform/Memory</RepositoryUrl>
