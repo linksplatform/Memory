@@ -7,6 +7,6 @@ LinksPlatform's Platform.Memory Class Library.
 
 Namespace: Platform.Memory
 
-Forked from: https://github.com/Konard/LinksPlatform/tree/1af617ce19994e78e7ed5c980075c18f8f6cf7f9/Platform/Platform.Memory
+Forked from: [Konard/LinksPlatform/Platform/Platform.Memory](https://github.com/Konard/LinksPlatform/tree/1af617ce19994e78e7ed5c980075c18f8f6cf7f9/Platform/Platform.Memory)
 
-NuGet package: https://www.nuget.org/packages/Platform.Memory
+NuGet package: [Platform.Memory](https://www.nuget.org/packages/Platform.Memory)
