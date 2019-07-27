@@ -25,7 +25,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Platform.IO" Version="0.0.3" />
+    <PackageReference Include="Platform.IO" Version="0.0.4" />
     <PackageReference Include="System.IO.MemoryMappedFiles" Version="4.3.0" />
   </ItemGroup>
 
