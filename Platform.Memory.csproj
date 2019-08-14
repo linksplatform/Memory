@@ -27,7 +27,7 @@ Refactoring and issues fix.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Platform.IO" Version="0.0.4" />
+    <PackageReference Include="Platform.IO" Version="0.0.5" />
     <PackageReference Include="System.IO.MemoryMappedFiles" Version="4.3.0" />
   </ItemGroup>
 
