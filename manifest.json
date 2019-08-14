@@ -1,0 +1,248 @@
+{
+  "homepages": [],
+  "source_base_path": "/home/travis/build/linksplatform/Memory",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html",
+          "hash": "MoFKQwDAQ08YWdRmEHEhKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Memory.ArrayMemory-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Memory.ArrayMemory-1.html",
+          "hash": "EcenWcm/69Kx/JhAuiYycg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Memory.DirectMemoryAsArrayMemoryAdapter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Memory.DirectMemoryAsArrayMemoryAdapter-1.html",
+          "hash": "34HxL5FL8QRS6b3+WMvW3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Memory.FileArrayMemory-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Memory.FileArrayMemory-1.html",
+          "hash": "LTUcLF4V02OK8wLi2+cBMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Memory.FileMappedResizableDirectMemory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Memory.FileMappedResizableDirectMemory.html",
+          "hash": "YV+a2savl46AizZGNAuiIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Memory.HeapResizableDirectMemory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Memory.HeapResizableDirectMemory.html",
+          "hash": "V6sYYA/c6+4V/Bi/H593ww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Memory.IArrayMemory-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Memory.IArrayMemory-1.html",
+          "hash": "Z69CSqZruexBOkPif+1UYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Memory.IDirectMemory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Memory.IDirectMemory.html",
+          "hash": "ieGFrFne2AeMIJQyj4OQPA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Memory.IMemory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Memory.IMemory.html",
+          "hash": "QNu2llegiSscM4lOcXnBOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Memory.IResizableDirectMemory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Memory.IResizableDirectMemory.html",
+          "hash": "7HykPuHsZhsaOKoPNxRpZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Memory.ResizableDirectMemoryBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Memory.ResizableDirectMemoryBase.html",
+          "hash": "P+0iNgEa7KzIHKIP9WNd+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Memory.TemporaryFileMappedResizableDirectMemory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Memory.TemporaryFileMappedResizableDirectMemory.html",
+          "hash": "uSBd5yZObW/CIN22hd1v6g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Memory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Memory.html",
+          "hash": "jtX1kofimfRSN/hX5b133A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "CwsZgb4f3bpAcwpzELVIqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "U9PnomRWlsQODQSEpfGmHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 12,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
