@@ -112,7 +112,7 @@ namespace Platform.Memory
 
         #region DisposableBase Methods
 
-        protected override void DisposeCore(bool manual, bool wasDisposed)
+        protected override void Dispose(bool manual, bool wasDisposed)
         {
             if (!wasDisposed)
             {

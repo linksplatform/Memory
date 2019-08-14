@@ -84,9 +84,9 @@ namespace Platform.Memory
             if (_accessor != null)
             {
                 _accessor.SafeMemoryMappedViewHandle.ReleasePointer();
-                Disposable.TryDispose(ref _accessor);
+                Disposable.TryDisposeAndResetToDefault(ref _accessor);
             }
-            Disposable.TryDispose(ref _file);
+            Disposable.TryDisposeAndResetToDefault(ref _file);
             return true;
         }
 

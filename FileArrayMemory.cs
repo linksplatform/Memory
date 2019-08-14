@@ -13,12 +13,6 @@ namespace Platform.Memory
     public class FileArrayMemory<TElement> : DisposableBase, IArrayMemory<TElement> //-V3073
         where TElement : struct
     {
-        #region Constants
-
-        public static readonly long ElementSize = StructureHelpers.SizeOf<TElement>();
-
-        #endregion
-
         #region Fields
 
         private readonly string _address;
@@ -34,12 +28,12 @@ namespace Platform.Memory
         {
             get
             {
-                _file.Seek(ElementSize * index, SeekOrigin.Begin);
+                _file.Seek(Structure<TElement>.Size * index, SeekOrigin.Begin);
                 return _file.ReadOrDefault<TElement>();
             }
             set
             {
-                _file.Seek(ElementSize * index, SeekOrigin.Begin);
+                _file.Seek(Structure<TElement>.Size * index, SeekOrigin.Begin);
                 _file.Write(value);
             }
         }
@@ -64,7 +58,13 @@ namespace Platform.Memory
 
         #region DisposableBase Methods
 
-        protected override void DisposeCore(bool manual, bool wasDisposed) => Disposable.TryDispose(_file);
+        protected override void Dispose(bool manual, bool wasDisposed)
+        {
+            if(!wasDisposed)
+            {
+                _file.DisposeIfPossible();
+            }
+        }
 
         #endregion
     }

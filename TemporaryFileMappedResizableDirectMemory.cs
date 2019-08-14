@@ -30,9 +30,9 @@ namespace Platform.Memory
 
         #region DisposableBase Methods
 
-        protected override void DisposeCore(bool manual, bool wasDisposed)
+        protected override void Dispose(bool manual, bool wasDisposed)
         {
-            base.DisposeCore(manual, wasDisposed);
+            base.Dispose(manual, wasDisposed);
             if (!wasDisposed)
             {
                 File.Delete(Address);

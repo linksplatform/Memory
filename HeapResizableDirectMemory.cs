@@ -44,7 +44,7 @@ namespace Platform.Memory
             if (Pointer == IntPtr.Zero)
             {
                 Pointer = Marshal.AllocHGlobal(new IntPtr(newReservedCapacity));
-                MemoryHelpers.ZeroMemory(Pointer.ToPointer(), newReservedCapacity);
+                MemoryBlock.Zero(Pointer.ToPointer(), newReservedCapacity);
             }
             else
             {
