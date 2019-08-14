@@ -32,7 +32,6 @@ namespace Platform.Memory
 
         #region Properties
 
-
         /// <inheritdoc/>
         /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="P:Platform.Memory.IMemory.Size"]/*'/>
         /// <exception cref="ObjectDisposedException"><para>The memory block is disposed.</para><para>Блок памяти уже высвобожден.</para></exception>
