@@ -1,5 +1,6 @@
 ﻿using System;
 using Platform.Disposables;
+using Platform.Exceptions;
 using Platform.Unsafe;
 
 namespace Platform.Memory
@@ -42,10 +43,7 @@ namespace Platform.Memory
 
         public DirectMemoryAsArrayMemoryAdapter(IDirectMemory memory)
         {
-            if (memory.Size % Structure<TElement>.Size > 0)
-            {
-                throw new ArgumentException("Memory is not aligned to element size.", nameof(memory));
-            }
+            Ensure.Always.ArgumentMeetsCriteria(m => (m.Size % Structure<TElement>.Size) == 0, memory, nameof(memory), "Memory is not aligned to element size.");
             _memory = memory;
         }
 

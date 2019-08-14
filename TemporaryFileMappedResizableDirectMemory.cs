@@ -16,15 +16,9 @@ namespace Platform.Memory
 
         #region Constructors
 
-        public TemporaryFileMappedResizableDirectMemory(long minimumReservedCapacity)
-            : base(Path.GetTempFileName(), minimumReservedCapacity)
-        {
-        }
+        public TemporaryFileMappedResizableDirectMemory(long minimumReservedCapacity) : base(Path.GetTempFileName(), minimumReservedCapacity) { }
 
-        public TemporaryFileMappedResizableDirectMemory()
-            : this(MinimumCapacity)
-        {
-        }
+        public TemporaryFileMappedResizableDirectMemory() : this(MinimumCapacity) { }
 
         #endregion
 

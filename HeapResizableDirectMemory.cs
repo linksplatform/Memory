@@ -28,10 +28,7 @@ namespace Platform.Memory
             UsedCapacity = 0;
         }
 
-        public HeapResizableDirectMemory()
-            : this(MinimumCapacity)
-        {
-        }
+        public HeapResizableDirectMemory() : this(MinimumCapacity) { }
 
         #endregion
 

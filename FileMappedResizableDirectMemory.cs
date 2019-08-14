@@ -2,6 +2,8 @@
 using System.IO;
 using System.IO.MemoryMappedFiles;
 using Platform.Disposables;
+using Platform.Exceptions;
+using Platform.Collections;
 using Platform.IO;
 
 namespace Platform.Memory
@@ -31,10 +33,7 @@ namespace Platform.Memory
 
         public FileMappedResizableDirectMemory(string address, long minimumReservedCapacity)
         {
-            if (string.IsNullOrWhiteSpace(address))
-            {
-                throw new ArgumentOutOfRangeException(nameof(address));
-            }
+            Ensure.Always.ArgumentNotEmptyAndNotWhiteSpace(address, nameof(address));
             if (minimumReservedCapacity < MinimumCapacity)
             {
                 minimumReservedCapacity = MinimumCapacity;
@@ -45,10 +44,7 @@ namespace Platform.Memory
             UsedCapacity = size;
         }
 
-        public FileMappedResizableDirectMemory(string address)
-            : this(address, MinimumCapacity)
-        {
-        }
+        public FileMappedResizableDirectMemory(string address) : this(address, MinimumCapacity) { }
 
         #endregion
 
@@ -60,7 +56,7 @@ namespace Platform.Memory
             {
                 return;
             }
-            _file = MemoryMappedFile.CreateFromFile(Address, FileMode.Open, null, capacity, MemoryMappedFileAccess.ReadWrite);
+            _file = MemoryMappedFile.CreateFromFile(Address, FileMode.Open, mapName: null, capacity, MemoryMappedFileAccess.ReadWrite);
             _accessor = _file.CreateViewAccessor();
             byte* pointer = null;
             _accessor.SafeMemoryMappedViewHandle.AcquirePointer(ref pointer);
