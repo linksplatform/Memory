@@ -1,8 +1,8 @@
 ﻿namespace Platform.Memory
 {
     /// <summary>
-    /// Represents a resizable memory block interface with direct access (via unmanaged pointers).
-    /// Представляет интерфейс блока памяти c изменяемым размером и прямым доступом (через неуправляемые указатели).
+    /// <para>Represents a resizable memory block interface with direct access (via unmanaged pointers).</para>
+    /// <para>Представляет интерфейс блока памяти c изменяемым размером и прямым доступом (через неуправляемые указатели).</para>
     /// </summary>
     /// <remarks>
     /// Возможно, если дать настройку - инициализировать ли нулями выделяемую память можно немного выиграть в производительности,
@@ -24,33 +24,41 @@
     public interface IResizableDirectMemory : IDirectMemory
     {
         /// <summary>
-        /// Gets or sets the reserved capacity in bytes of this memory block.
-        /// Возвращает или устаналивает зарезервированный размер блока памяти в байтах.
+        /// <para>Gets or sets the reserved capacity in bytes of this memory block.</para>
+        /// <para>Возвращает или устаналивает зарезервированный размер блока памяти в байтах.</para>
         /// </summary>
         /// <remarks>
+        /// <para>
         /// If less then zero the value is replaced with zero.
         /// Cannot be less than the used capacity of this memory block.
+        /// </para>
+        /// <para>
         /// Если меньше нуля, значение заменяется на ноль.
         /// Не может быть меньше используемой емкости блока памяти.
+        /// </para>
         /// </remarks>
-        /// <exception cref="ObjectDisposedException">The memory block is disposed. Блок памяти уже высвобожден.</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Attempted to set the reserved capacity to a value that is less than the used capacity. Была выполнена попытка установить зарезервированную емкость на значение, которое меньше используемой емкости.</exception>
         long ReservedCapacity { get; set; }
 
         /// <summary>
-        /// Gets or sets the used capacity in bytes of this memory block.
-        /// Возвращает или устанавливает используемый размер в блоке памяти (в байтах).
+        /// <para>Gets or sets the used capacity in bytes of this memory block.</para>
+        /// <para>Возвращает или устанавливает используемый размер в блоке памяти (в байтах).</para>
         /// </summary>
         /// <remarks>
+        /// <para>
         /// If less then zero the value is replaced with zero.
         /// Cannot be greater than the reserved capacity of this memory block.
+        /// </para>
+        /// <para>
         /// It is recommended to reduce the reserved capacity of the memory block to the used capacity (specified in this property) after the completion of the use of the memory block.
+        /// </para>
+        /// <para>
         /// Если меньше нуля, значение заменяется на ноль.
         /// Не может быть больше, чем зарезервированная емкость этого блока памяти.
+        /// </para>
+        /// <para>
         /// Рекомендуется уменьшать фактический размер блока памяти до используемого размера (указанного в этом свойстве) после завершения использования блока памяти.
+        /// </para>
         /// </remarks>
-        /// <exception cref="ObjectDisposedException">The memory block is disposed. Блок памяти уже высвобожден.</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Attempted to set the used capacity to a value that is greater than the reserved capacity or less than zero. Была выполнена попытка установить используемую емкость на значение, которое больше, чем зарезервированная емкость или меньше нуля.</exception>
         long UsedCapacity { get; set; }
     }
 }

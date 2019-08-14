@@ -9,8 +9,8 @@ using Platform.IO;
 namespace Platform.Memory
 {
     /// <summary>
-    /// Represents a memory block stored as a file on disk.
-    /// Представляет блок памяти, хранящийся в виде файла на диске.
+    /// <para>Represents a memory block stored as a file on disk.</para>
+    /// <para>Представляет блок памяти, хранящийся в виде файла на диске.</para>
     /// </summary>
     public unsafe class FileMappedResizableDirectMemory : ResizableDirectMemoryBase
     {
@@ -19,31 +19,47 @@ namespace Platform.Memory
         private MemoryMappedFile _file;
         private MemoryMappedViewAccessor _accessor;
 
-        protected readonly string Address;
+        /// <summary>
+        /// <para>Gets path to memory mapped file.</para>
+        /// <para>Получает путь к отображенному в памяти файлу.</para>
+        /// </summary>
+        protected readonly string Path;
 
         #endregion
 
         #region DisposableBase Properties
 
-        protected override string ObjectName => $"File stored memory block at '{Address}' path.";
+        /// <inheritdoc/>
+        protected override string ObjectName => $"File stored memory block at '{Path}' path.";
 
         #endregion
 
         #region Constructors
 
-        public FileMappedResizableDirectMemory(string address, long minimumReservedCapacity)
+        /// <summary>
+        /// <para>Initializes a new instance of the <see cref="FileMappedResizableDirectMemory"/> class.</para>
+        /// <para>Инициализирует новый экземпляр класса <see cref="FileMappedResizableDirectMemory"/>.</para>
+        /// </summary>
+        /// <param name="path"><para>An path to file.</para><para>Путь к файлу.</para></param>
+        /// <param name="minimumReservedCapacity"><para>Minimum file size in bytes.</para><para>Минимальный размер файла в байтах.</para></param>
+        public FileMappedResizableDirectMemory(string path, long minimumReservedCapacity)
         {
-            Ensure.Always.ArgumentNotEmptyAndNotWhiteSpace(address, nameof(address));
+            Ensure.Always.ArgumentNotEmptyAndNotWhiteSpace(path, nameof(path));
             if (minimumReservedCapacity < MinimumCapacity)
             {
                 minimumReservedCapacity = MinimumCapacity;
             }
-            Address = address;
-            var size = FileHelpers.GetSize(Address);
+            Path = path;
+            var size = FileHelpers.GetSize(Path);
             ReservedCapacity = size > minimumReservedCapacity ? ((size / minimumReservedCapacity) + 1) * minimumReservedCapacity : minimumReservedCapacity;
             UsedCapacity = size;
         }
 
+        /// <summary>
+        /// <para>Initializes a new instance of the <see cref="FileMappedResizableDirectMemory"/> class.</para>
+        /// <para>Инициализирует новый экземпляр класса <see cref="FileMappedResizableDirectMemory"/>.</para>
+        /// </summary>
+        /// <param name="address"><para>An path to file.</para><para>Путь к файлу.</para></param>
         public FileMappedResizableDirectMemory(string address) : this(address, MinimumCapacity) { }
 
         #endregion
@@ -56,7 +72,7 @@ namespace Platform.Memory
             {
                 return;
             }
-            _file = MemoryMappedFile.CreateFromFile(Address, FileMode.Open, mapName: null, capacity, MemoryMappedFileAccess.ReadWrite);
+            _file = MemoryMappedFile.CreateFromFile(Path, FileMode.Open, mapName: null, capacity, MemoryMappedFileAccess.ReadWrite);
             _accessor = _file.CreateViewAccessor();
             byte* pointer = null;
             _accessor.SafeMemoryMappedViewHandle.AcquirePointer(ref pointer);
@@ -90,18 +106,22 @@ namespace Platform.Memory
 
         #region ResizableDirectMemoryBase Methods
 
+        /// <inheritdoc/>
+        /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="M:Platform.Memory.ResizableDirectMemoryBase.OnReservedCapacityChanged(System.Int64,System.Int64)"]/*'/>
         protected override void OnReservedCapacityChanged(long oldReservedCapacity, long newReservedCapacity)
         {
             UnmapFile();
-            FileHelpers.SetSize(Address, newReservedCapacity);
+            FileHelpers.SetSize(Path, newReservedCapacity);
             MapFile(newReservedCapacity);
         }
 
-        protected override void DisposePointer(IntPtr pointer, long size)
+        /// <inheritdoc/>
+        /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="M:Platform.Memory.ResizableDirectMemoryBase.DisposePointer(System.IntPtr,System.Int64)"]/*'/>
+        protected override void DisposePointer(IntPtr pointer, long usedCapacity)
         {
             if (UnmapFile(pointer))
             {
-                FileHelpers.SetSize(Address, size);
+                FileHelpers.SetSize(Path, usedCapacity);
             }
         }
 

@@ -1,14 +1,14 @@
 ﻿namespace Platform.Memory
 {
     /// <summary>
-    /// Represents a memory block interface with size in bytes.
-    /// Представляет интерфейс блока памяти с размером в байтах.
+    /// <para>Represents a memory block interface with size in bytes.</para>
+    /// <para>Представляет интерфейс блока памяти с размером в байтах.</para>
     /// </summary>
     public interface IMemory
     {
         /// <summary>
-        /// Gets the size in bytes of this memory block.
-        /// Возвращает размер блока памяти в байтах.
+        /// <para>Gets the size in bytes of this memory block.</para>
+        /// <para>Возвращает размер блока памяти в байтах.</para>
         /// </summary>
         long Size { get; }
     }

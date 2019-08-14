@@ -1,10 +1,10 @@
 ﻿namespace Platform.Memory
 {
     /// <summary>
-    /// Represents a memory block with access via indexer.
-    /// Представляет блок памяти с доступом через индексатор.
+    /// <para>Represents a memory block with access via indexer.</para>
+    /// <para>Представляет блок памяти с доступом через индексатор.</para>
     /// </summary>
-    /// <typeparam name="TElement">Element type. Тип элемента.</typeparam>
+    /// <typeparam name="TElement"><para>Element type.</para><para>Тип элемента.</para></typeparam>
     public class ArrayMemory<TElement> : IArrayMemory<TElement>
     {
         #region Fields
@@ -15,8 +15,12 @@
 
         #region Properties
 
+        /// <inheritdoc/>
+        /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="P:Platform.Memory.IMemory.Size"]/*'/>
         public long Size => _array.Length;
 
+        /// <inheritdoc/>
+        /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="P:Platform.Memory.IArrayMemory`1.Item(System.Int64)"]/*'/>
         public TElement this[long index]
         {
             get => _array[index];
@@ -27,6 +31,11 @@
 
         #region Constuctors
 
+        /// <summary>
+        /// <para>Initializes a new instance of the <see cref="ArrayMemory{TElement}"/> class.</para>
+        /// <para>Инициализирует новый экземпляр класса <see cref="ArrayMemory{TElement}"/>.</para>
+        /// </summary>
+        /// <param name="size"><para>Size in bytes.</para><para>Размер в байтах.</para></param>
         public ArrayMemory(long size) => _array = new TElement[size];
 
         #endregion
