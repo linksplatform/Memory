@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Memory Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Memory</AssemblyTitle>
-    <VersionPrefix>0.1.2</VersionPrefix>
+    <VersionPrefix>0.1.3</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -22,12 +22,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageReleaseNotes>Platform.IO dependency updated from 0.0.4 to 0.0.5.
-Using new EnsureExtensions.
-FileMappedResizableDirectMemory.Address renamed to Path.
-XML documentation file generation turned on.
-Travis CI connected.
-Refactoring, issues fix.</PackageReleaseNotes>
+    <PackageReleaseNotes>Platform.IO dependency updated from 0.0.5 to 0.0.6.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
