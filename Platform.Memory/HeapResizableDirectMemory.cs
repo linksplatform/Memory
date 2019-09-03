@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using Platform.Unsafe;
 
 namespace Platform.Memory
 {
@@ -55,7 +54,6 @@ namespace Platform.Memory
             if (Pointer == IntPtr.Zero)
             {
                 Pointer = Marshal.AllocHGlobal(new IntPtr(newReservedCapacity));
-                MemoryBlock.Zero(Pointer.ToPointer(), newReservedCapacity);
             }
             else
             {
