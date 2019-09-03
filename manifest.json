@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.ArrayMemory-1.html",
-          "hash": "6GfCkywmcXjH9GmmXjxDmA=="
+          "hash": "+4eFktaVgNmATo7VPSjTFQ=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.DirectMemoryAsArrayMemoryAdapter-1.html",
-          "hash": "WaqZwm1A9+rCrQKicLPhvQ=="
+          "hash": "uwU6esx0jBBTQH5nNC+6IA=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.FileArrayMemory-1.html",
-          "hash": "jZLbDtru7288+J8XMVnnuA=="
+          "hash": "Df1an0ECPKqDqALgOBSlbQ=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.FileMappedResizableDirectMemory.html",
-          "hash": "2D+gDkWsRFCb0+2OGDEYPQ=="
+          "hash": "xQovJWtStODvyR84k/WbOw=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.HeapResizableDirectMemory.html",
-          "hash": "4cW/MAceH9LewG9L+z+bYw=="
+          "hash": "R3c7FqreJJRL2ICtvaBisA=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.IArrayMemory-1.html",
-          "hash": "6aD6ucUhCTdjJscL0GIoKA=="
+          "hash": "cOe6FVpT/yYEnwgYpe/qxg=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.IDirectMemory.html",
-          "hash": "3l0N43yNRvI2UPelEG8KRQ=="
+          "hash": "sqYtS7D5Ly5aA+jTXl9tWg=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.IMemory.html",
-          "hash": "KhpMTpMuO3zlrQ3lejcN2Q=="
+          "hash": "y4Frep9GE7nl4SbZdWOoIg=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.IResizableDirectMemory.html",
-          "hash": "9oQ9nlYlIxxvDRdDlBfAWw=="
+          "hash": "jptl4PkYbGUG5EnbHJnqPw=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.ResizableDirectMemoryBase.html",
-          "hash": "mED41+u0K1xYwC9DqZbmoA=="
+          "hash": "BpdFUP5VSd+eudng0vwN3Q=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.TemporaryFileMappedResizableDirectMemory.html",
-          "hash": "ghBYjwcSC7foM4hwiHUCJw=="
+          "hash": "Vj04IYEC8bIdgjgNw6WAFQ=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.Tests.HeapResizableDirectMemoryTests.html",
-          "hash": "BBDRmbO5PG9xLNhQ9MvNMA=="
+          "hash": "S7lEtR86+n2y35ZuyCTgAg=="
         }
       },
       "is_incremental": false,
