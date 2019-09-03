@@ -673,3 +673,28 @@ references:
   isSpec: "True"
   fullName: Platform.Memory.TemporaryFileMappedResizableDirectMemory.ObjectName
   nameWithType: TemporaryFileMappedResizableDirectMemory.ObjectName
+- uid: Platform.Memory.Tests
+  name: Platform.Memory.Tests
+  href: api/Platform.Memory.Tests.html
+  commentId: N:Platform.Memory.Tests
+  fullName: Platform.Memory.Tests
+  nameWithType: Platform.Memory.Tests
+- uid: Platform.Memory.Tests.HeapResizableDirectMemoryTests
+  name: HeapResizableDirectMemoryTests
+  href: api/Platform.Memory.Tests.HeapResizableDirectMemoryTests.html
+  commentId: T:Platform.Memory.Tests.HeapResizableDirectMemoryTests
+  fullName: Platform.Memory.Tests.HeapResizableDirectMemoryTests
+  nameWithType: HeapResizableDirectMemoryTests
+- uid: Platform.Memory.Tests.HeapResizableDirectMemoryTests.CorrectMemoryReallocationTest
+  name: CorrectMemoryReallocationTest()
+  href: api/Platform.Memory.Tests.HeapResizableDirectMemoryTests.html#Platform_Memory_Tests_HeapResizableDirectMemoryTests_CorrectMemoryReallocationTest
+  commentId: M:Platform.Memory.Tests.HeapResizableDirectMemoryTests.CorrectMemoryReallocationTest
+  fullName: Platform.Memory.Tests.HeapResizableDirectMemoryTests.CorrectMemoryReallocationTest()
+  nameWithType: HeapResizableDirectMemoryTests.CorrectMemoryReallocationTest()
+- uid: Platform.Memory.Tests.HeapResizableDirectMemoryTests.CorrectMemoryReallocationTest*
+  name: CorrectMemoryReallocationTest
+  href: api/Platform.Memory.Tests.HeapResizableDirectMemoryTests.html#Platform_Memory_Tests_HeapResizableDirectMemoryTests_CorrectMemoryReallocationTest_
+  commentId: Overload:Platform.Memory.Tests.HeapResizableDirectMemoryTests.CorrectMemoryReallocationTest
+  isSpec: "True"
+  fullName: Platform.Memory.Tests.HeapResizableDirectMemoryTests.CorrectMemoryReallocationTest
+  nameWithType: HeapResizableDirectMemoryTests.CorrectMemoryReallocationTest
