@@ -4,14 +4,14 @@
     <Description>LinksPlatform's Platform.Memory Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Memory</AssemblyTitle>
-    <VersionPrefix>0.1.3</VersionPrefix>
+    <VersionPrefix>0.1.4</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">netstandard2.0;net461</TargetFrameworks>
     <TargetFramework Condition="'$(OS)' != 'Windows_NT'">netcoreapp2.0</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AssemblyName>Platform.Memory</AssemblyName>
     <PackageId>Platform.Memory</PackageId>
-    <PackageTags>LinksPlatform;Memory;IMemory;IDirectMemory;IArrayMemory;IResizableDirectMemory;HeapResizableDirectMemory;FileMappedResizableDirectMemory;TemporaryFileMappedResizableDirectMemory;MemoryMappedFiles</PackageTags>
+    <PackageTags>LinksPlatform;Memory;IMemory;IDirectMemory;DirectMemoryAsArrayMemoryAdapter;IArrayMemory;ArrayMemory;IResizableDirectMemory;ResizableDirectMemoryBase;HeapResizableDirectMemory;FileArrayMemory;FileMappedResizableDirectMemory;TemporaryFileMappedResizableDirectMemory;MemoryMappedFiles</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/18469f4d033ee9a5b7b84caab9c585acab2ac519/doc/Avatar-rainbow-icon-64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://linksplatform.github.io/Memory</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -23,7 +23,10 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageReleaseNotes>Platform.IO dependency updated from 0.0.5 to 0.0.6.</PackageReleaseNotes>
+    <PackageReleaseNotes>Added support for .NET Framework 4.6.1.
+Platform.IO dependency updated from 0.0.6 to 0.1.0.
+Tests added.
+Refactoring, issues fix.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
