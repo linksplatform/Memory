@@ -31,7 +31,7 @@ Refactoring, issues fix.</PackageReleaseNotes>
 
   <ItemGroup>
     <PackageReference Include="System.IO.MemoryMappedFiles" Version="4.3.0" />
-    <PackageReference Include="Platform.IO" Version="0.1.0" />
+    <PackageReference Include="Platform.IO" Version="0.1.1" />
   </ItemGroup>
 
 </Project>
