@@ -1,6 +1,7 @@
 ﻿using System;
 using Platform.Disposables;
 using Platform.Exceptions;
+using Platform.Unsafe;
 
 namespace Platform.Memory
 {
@@ -32,8 +33,8 @@ namespace Platform.Memory
         /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="P:Platform.Memory.IArrayMemory`1.Item(System.Int64)"]/*'/>
         public TElement this[long index]
         {
-            get => System.Runtime.CompilerServices.Unsafe.Read<TElement>((byte*)Pointer + (System.Runtime.CompilerServices.Unsafe.SizeOf<TElement>() * index));
-            set => System.Runtime.CompilerServices.Unsafe.Write((byte*)Pointer + (System.Runtime.CompilerServices.Unsafe.SizeOf<TElement>() * index), value);
+            get => Pointer.ReadElementValue<TElement>(index);
+            set => Pointer.WriteElementValue(index, value);
         }
 
         #endregion
@@ -54,7 +55,7 @@ namespace Platform.Memory
         /// <param name="memory"><para>An object implementing <see cref="IDirectMemory"/> interface.</para><para>Объект, реализующий интерфейс <see cref="IDirectMemory"/>.</para></param>
         public DirectMemoryAsArrayMemoryAdapter(IDirectMemory memory)
         {
-            Ensure.Always.ArgumentMeetsCriteria(memory, m => (m.Size % Unsafe.Structure<TElement>.Size) == 0, nameof(memory), "Memory is not aligned to element size.");
+            Ensure.Always.ArgumentMeetsCriteria(memory, m => (m.Size % Structure<TElement>.Size) == 0, nameof(memory), "Memory is not aligned to element size.");
             _memory = memory;
         }
 
