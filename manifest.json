@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.ArrayMemory-1.html",
-          "hash": "Gh19MsUwWjgky5JID6toZA=="
+          "hash": "NPYVQiknn5O04sCsYCbUsw=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.DirectMemoryAsArrayMemoryAdapter-1.html",
-          "hash": "l/JEW7TzZPUKpWn2IyCGhg=="
+          "hash": "+oQQ0v2zghbLs9zERnoSWw=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.FileArrayMemory-1.html",
-          "hash": "gaTX6V32w8sp2ConLmSGsQ=="
+          "hash": "I9THHMpA+BAMrr3HF3Ou6w=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.FileMappedResizableDirectMemory.html",
-          "hash": "d1GwV9wof0kMm+lSUCr4hg=="
+          "hash": "MhUobbdpqxEiX37+A73MEA=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.HeapResizableDirectMemory.html",
-          "hash": "F39UIetMqedIrHdzgn1HtA=="
+          "hash": "E6dB9CWdqgFNL3vXxt5Xcw=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.IArrayMemory-1.html",
-          "hash": "ExVXGOESe+w9P4LYihy6WA=="
+          "hash": "CNRxZQekDGL9yPCHG0RJJw=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.IDirectMemory.html",
-          "hash": "qjMW6ikHQfa01gO8pOuaFQ=="
+          "hash": "/cL7H6hfpI4ZzBvyJkj/0A=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.IMemory.html",
-          "hash": "aAYbiOOR451nTIWaEjep2A=="
+          "hash": "BwycyncIx14ysW2vSx0YBQ=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.IResizableDirectMemory.html",
-          "hash": "LZUs1BrJVb0cYXHzkUv8fg=="
+          "hash": "2cmUkMYlXs2LSfOn8tmxXg=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.ResizableDirectMemoryBase.html",
-          "hash": "DaU93pNdeWFL6eS5wCUwEA=="
+          "hash": "wTc326x1f6JGslTaJX6zEw=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.TemporaryFileMappedResizableDirectMemory.html",
-          "hash": "fVnpJryp/EbCDvemwfnjjg=="
+          "hash": "kOxgye4OYTJSsJCpPn3p5w=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.Tests.HeapResizableDirectMemoryTests.html",
-          "hash": "Zy8NVGVyRX31TGXUU/8HDQ=="
+          "hash": "ARoBSR2FBfQDjUed1AJAsg=="
         }
       },
       "is_incremental": false,
@@ -231,11 +231,10 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 0,
+          "total_file_count": 14,
           "skipped_file_count": 0
         },
         "ConceptualDocumentProcessor": {
@@ -244,10 +243,11 @@
           "total_file_count": 1,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 14,
+          "total_file_count": 0,
           "skipped_file_count": 0
         }
       }
