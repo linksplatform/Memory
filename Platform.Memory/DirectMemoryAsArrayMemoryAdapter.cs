@@ -10,7 +10,7 @@ namespace Platform.Memory
     /// <para>Представляет адаптер к блоку памяти с доступом через индексатор.</para>
     /// </summary>
     /// <typeparam name="TElement"><para>Element type.</para><para>Тип элемента.</para></typeparam>
-    public unsafe class DirectMemoryAsArrayMemoryAdapter<TElement> : DisposableBase, IArrayMemory<TElement>, IDirectMemory
+    public class DirectMemoryAsArrayMemoryAdapter<TElement> : DisposableBase, IArrayMemory<TElement>, IDirectMemory
         where TElement : struct
     {
         #region Fields
