@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Platform.Unsafe;
+using System;
 using System.Runtime.InteropServices;
 
 namespace Platform.Memory
@@ -54,10 +55,13 @@ namespace Platform.Memory
             if (Pointer == IntPtr.Zero)
             {
                 Pointer = Marshal.AllocHGlobal(new IntPtr(newReservedCapacity));
+                MemoryBlock.Zero((void*)Pointer, newReservedCapacity);
             }
             else
             {
                 Pointer = Marshal.ReAllocHGlobal(Pointer, new IntPtr(newReservedCapacity));
+                var pointer = (byte*)Pointer + oldReservedCapacity;
+                MemoryBlock.Zero(pointer, newReservedCapacity - oldReservedCapacity);
             }
         }
 
