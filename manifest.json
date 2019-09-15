@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "VU6V3TxCNc7/sNN6s+p7Bw=="
+          "hash": "wChINdYPKiLA0KyC+2uNQw=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.ArrayMemory-1.html",
-          "hash": "d7ajNIGv+OCDWPUcyIf4vQ=="
+          "hash": "6c1vbQ1OZW/JVDcCkvKzZA=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.DirectMemoryAsArrayMemoryAdapter-1.html",
-          "hash": "Epd8qt5lhNK/hXyZUZ2NrQ=="
+          "hash": "s1X4RIhFV4H74B7ig3fV7Q=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.FileArrayMemory-1.html",
-          "hash": "lXjqJrLJT9brJ/2KHwmIFQ=="
+          "hash": "xJX2W83zSKhhiAqDNpKq/Q=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.FileMappedResizableDirectMemory.html",
-          "hash": "DUMMxKJZ7SRI9PSABbt4Tg=="
+          "hash": "DkXTdmD4rYggYCZx4pfnow=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.HeapResizableDirectMemory.html",
-          "hash": "6IwDnkfn/CMMrRfEeI0OWw=="
+          "hash": "W0lrO8n5SsHohwY7sNx+Zg=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.IArrayMemory-1.html",
-          "hash": "lkPF2YOoay0zkJn8nFV6Yw=="
+          "hash": "DuG9FvmJ8ECaVhNbFQ3A/w=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.IDirectMemory.html",
-          "hash": "hxdV3D97fqdH8fGTXdOHdA=="
+          "hash": "16846NtOxRcItXGZUUT5XQ=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.IMemory.html",
-          "hash": "cZfAV5VDoMNB5iXSLlX6NQ=="
+          "hash": "BXzeWkwsfolvp7ut0dGF4g=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.IResizableDirectMemory.html",
-          "hash": "DTS3zaOS080RF58N0dARuA=="
+          "hash": "DVUH4tNRgfkr2ZrS30ucnA=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.ResizableDirectMemoryBase.html",
-          "hash": "wK/zUyW/7OwAG1Cn0mCU0A=="
+          "hash": "2oo1aiAvwoPPglu2U+YyAA=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.TemporaryFileMappedResizableDirectMemory.html",
-          "hash": "IWF0DOAuDlFRRI/pAB7DGA=="
+          "hash": "BiYuxdW7u5pjEEH3oYebwQ=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.Tests.HeapResizableDirectMemoryTests.html",
-          "hash": "baHuwY2Rn/Y4cQGcupJjyg=="
+          "hash": "kws2F2Yp8eC0dVtVKtY6cQ=="
         }
       },
       "is_incremental": false,
@@ -174,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.Tests.html",
-          "hash": "bBo8R8LLcJPCDqya/GLwoA=="
+          "hash": "ke9mInLqjPoAKbdl8WA+wg=="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Memory.html",
-          "hash": "WfdFJ/rYaXFv3ES75obMNA=="
+          "hash": "y1u8fN8zgnQZYSY/L0M5Rg=="
         }
       },
       "is_incremental": false,
@@ -231,11 +231,10 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 0,
+          "total_file_count": 1,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
@@ -244,10 +243,11 @@
           "total_file_count": 14,
           "skipped_file_count": 0
         },
-        "ConceptualDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 1,
+          "total_file_count": 0,
           "skipped_file_count": 0
         }
       }
