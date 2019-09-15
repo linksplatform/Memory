@@ -9,17 +9,18 @@ namespace Platform.Memory.Tests
         {
             using (var heapMemory = new HeapResizableDirectMemory())
             {
-                void* pointer1 = (void*)heapMemory.Pointer;
-                var value1 = *((byte*)pointer1 + heapMemory.ReservedCapacity - 1);
-
+                var value1 = GetLastByte(heapMemory);
                 heapMemory.ReservedCapacity *= 2;
-
-                void* pointer2 = (void*)heapMemory.Pointer;
-                var value2 = *((byte*)pointer2 + heapMemory.ReservedCapacity - 1);
-
+                var value2 = GetLastByte(heapMemory);
                 Assert.Equal(value1, value2);
                 Assert.Equal(0, value1);
             }
+        }
+
+        private static byte GetLastByte(HeapResizableDirectMemory heapMemory)
+        {
+            var pointer1 = (void*)heapMemory.Pointer;
+            return *((byte*)pointer1 + heapMemory.ReservedCapacity - 1);
         }
     }
 }
