@@ -3,7 +3,7 @@ set -e # Exit with nonzero exit code if anything fails
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [[ ( "$TRAVIS_PULL_REQUEST" != "false" ) || ( "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ) ]]; then
-    echo "Skipping NuGet package deploy."
+    echo "Skipping NuGet package publishing."
     exit 0
 fi
 
