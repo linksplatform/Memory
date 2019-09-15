@@ -55,6 +55,7 @@ namespace Platform.Memory
         /// <param name="memory"><para>An object implementing <see cref="IDirectMemory"/> interface.</para><para>Объект, реализующий интерфейс <see cref="IDirectMemory"/>.</para></param>
         public DirectMemoryAsArrayMemoryAdapter(IDirectMemory memory)
         {
+            Ensure.Always.ArgumentNotNull(memory, nameof(memory));
             Ensure.Always.ArgumentMeetsCriteria(memory, m => (m.Size % Structure<TElement>.Size) == 0, nameof(memory), "Memory is not aligned to element size.");
             _memory = memory;
         }
