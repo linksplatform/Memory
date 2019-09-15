@@ -7,6 +7,9 @@ if [[ ( "$TRAVIS_PULL_REQUEST" != "false" ) || ( "$TRAVIS_BRANCH" != "$SOURCE_BR
     exit 0
 fi
 
+# Prebuild to make sure XML documentation ready for imports
+dotnet build -c Release
+
 # Pack NuGet package
 dotnet pack -c Release
 
