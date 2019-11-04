@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Runtime.CompilerServices;
 using Platform.Disposables;
 using Platform.Unsafe;
 using Platform.IO;
@@ -24,17 +25,23 @@ namespace Platform.Memory
 
         /// <inheritdoc/>
         /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="P:Platform.Memory.IMemory.Size"]/*'/>
-        public long Size => _file.Length;
+        public long Size
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => _file.Length;
+        }
 
         /// <inheritdoc/>
         /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="P:Platform.Memory.IArrayMemory`1.Item(System.Int64)"]/*'/>
         public TElement this[long index]
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 _file.Seek(Structure<TElement>.Size * index, SeekOrigin.Begin);
                 return _file.ReadOrDefault<TElement>();
             }
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 _file.Seek(Structure<TElement>.Size * index, SeekOrigin.Begin);
@@ -47,7 +54,11 @@ namespace Platform.Memory
         #region DisposableBase Properties
 
         /// <inheritdoc/>
-        protected override string ObjectName => $"File stored memory block at '{_address}' path.";
+        protected override string ObjectName
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => $"File stored memory block at '{_address}' path.";
+        }
 
         #endregion
 
@@ -58,6 +69,7 @@ namespace Platform.Memory
         /// <para>Инициализирует новый экземпляр класса <see cref="FileArrayMemory{TElement}"/>.</para>
         /// </summary>
         /// <param name="path"><para>An path to file.</para><para>Путь к файлу.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public FileArrayMemory(string path)
         {
             _address = path;
@@ -69,6 +81,7 @@ namespace Platform.Memory
         #region DisposableBase Methods
 
         /// <inheritdoc/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override void Dispose(bool manual, bool wasDisposed)
         {
             if(!wasDisposed)

@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace Platform.Memory
 {
@@ -11,7 +12,11 @@ namespace Platform.Memory
         #region DisposableBase Properties
 
         /// <inheritdoc/>
-        protected override string ObjectName => $"Temporary file stored memory block at '{Path}' path.";
+        protected override string ObjectName
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => $"Temporary file stored memory block at '{Path}' path.";
+        }
 
         #endregion
 
@@ -22,12 +27,14 @@ namespace Platform.Memory
         /// <para>Инициализирует новый экземпляр класса <see cref="TemporaryFileMappedResizableDirectMemory"/>.</para>
         /// </summary>
         /// <param name="minimumReservedCapacity"><para>Minimum file size in bytes.</para><para>Минимальный размер файла в байтах.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public TemporaryFileMappedResizableDirectMemory(long minimumReservedCapacity) : base(System.IO.Path.GetTempFileName(), minimumReservedCapacity) { }
 
         /// <summary>
         /// <para>Initializes a new instance of the <see cref="TemporaryFileMappedResizableDirectMemory"/> class.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="TemporaryFileMappedResizableDirectMemory"/>.</para>
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public TemporaryFileMappedResizableDirectMemory() : this(MinimumCapacity) { }
 
         #endregion
@@ -35,6 +42,7 @@ namespace Platform.Memory
         #region DisposableBase Methods
 
         /// <inheritdoc/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override void Dispose(bool manual, bool wasDisposed)
         {
             base.Dispose(manual, wasDisposed);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Runtime.CompilerServices;
 using Platform.Exceptions;
 using Platform.Disposables;
 using Platform.Ranges;
@@ -37,6 +38,7 @@ namespace Platform.Memory
         /// <exception cref="ObjectDisposedException"><para>The memory block is disposed.</para><para>Блок памяти уже высвобожден.</para></exception>
         public long Size
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 Ensure.Always.NotDisposed(this);
@@ -49,11 +51,13 @@ namespace Platform.Memory
         /// <exception cref="ObjectDisposedException"><para>The memory block is disposed.</para><para>Блок памяти уже высвобожден.</para></exception>
         public IntPtr Pointer
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 Ensure.Always.NotDisposed(this);
                 return _pointer;
             }
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             protected set
             {
                 Ensure.Always.NotDisposed(this);
@@ -67,11 +71,13 @@ namespace Platform.Memory
         /// <exception cref="ArgumentOutOfRangeException"><para>Attempted to set the reserved capacity to a value that is less than the used capacity.</para><para>Была выполнена попытка установить зарезервированную емкость на значение, которое меньше используемой емкости.</para></exception>
         public long ReservedCapacity
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 Ensure.Always.NotDisposed(this);
                 return _reservedCapacity;
             }
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Ensure.Always.NotDisposed(this);
@@ -90,11 +96,13 @@ namespace Platform.Memory
         /// <exception cref="ArgumentOutOfRangeException"><para>Attempted to set the used capacity to a value that is greater than the reserved capacity or less than zero.</para><para>Была выполнена попытка установить используемую емкость на значение, которое больше, чем зарезервированная емкость или меньше нуля.</para></exception>
         public long UsedCapacity
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
                 Ensure.Always.NotDisposed(this);
                 return _usedCapacity;
             }
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
                 Ensure.Always.NotDisposed(this);
@@ -111,7 +119,11 @@ namespace Platform.Memory
         #region DisposableBase Properties
 
         /// <inheritdoc/>
-        protected override bool AllowMultipleDisposeCalls => true;
+        protected override bool AllowMultipleDisposeCalls
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => true;
+        }
 
         #endregion
 
@@ -123,6 +135,7 @@ namespace Platform.Memory
         /// </summary>
         /// <param name="oldReservedCapacity"><para>The old reserved capacity of the memory block in bytes.</para><para>Старая зарезервированная емкость блока памяти в байтах.</para></param>
         /// <param name="newReservedCapacity"><para>The new reserved capacity of the memory block in bytes.</para><para>Новая зарезервированная емкость блока памяти в байтах.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected abstract void OnReservedCapacityChanged(long oldReservedCapacity, long newReservedCapacity);
 
         /// <summary>
@@ -131,6 +144,7 @@ namespace Platform.Memory
         /// </summary>
         /// <param name="pointer"><para>The pointer to a memory block.</para><para>Указатель на блок памяти.</para></param>
         /// <param name="usedCapacity"><para>The used capacity of the memory block in bytes.</para><para>Используемая емкость блока памяти в байтах.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected abstract void DisposePointer(IntPtr pointer, long usedCapacity);
 
         #endregion
@@ -138,6 +152,7 @@ namespace Platform.Memory
         #region DisposableBase Methods
 
         /// <inheritdoc/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override void Dispose(bool manual, bool wasDisposed)
         {
             if (!wasDisposed)

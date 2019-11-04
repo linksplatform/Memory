@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace Platform.Memory
 {
@@ -12,6 +13,10 @@ namespace Platform.Memory
         /// <para>Gets the pointer to the beginning of this memory block.</para>
         /// <para>Возвращает указатель на начало блока памяти.</para>
         /// </summary>
-        IntPtr Pointer { get; }
+        IntPtr Pointer
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get;
+        }
     }
 }

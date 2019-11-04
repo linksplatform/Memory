@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.IO.MemoryMappedFiles;
+using System.Runtime.CompilerServices;
 using Platform.Disposables;
 using Platform.Exceptions;
 using Platform.Collections;
@@ -30,7 +31,11 @@ namespace Platform.Memory
         #region DisposableBase Properties
 
         /// <inheritdoc/>
-        protected override string ObjectName => $"File stored memory block at '{Path}' path.";
+        protected override string ObjectName
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => $"File stored memory block at '{Path}' path.";
+        }
 
         #endregion
 
@@ -42,6 +47,7 @@ namespace Platform.Memory
         /// </summary>
         /// <param name="path"><para>An path to file.</para><para>Путь к файлу.</para></param>
         /// <param name="minimumReservedCapacity"><para>Minimum file size in bytes.</para><para>Минимальный размер файла в байтах.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public FileMappedResizableDirectMemory(string path, long minimumReservedCapacity)
         {
             Ensure.Always.ArgumentNotEmptyAndNotWhiteSpace(path, nameof(path));
@@ -60,12 +66,14 @@ namespace Platform.Memory
         /// <para>Инициализирует новый экземпляр класса <see cref="FileMappedResizableDirectMemory"/>.</para>
         /// </summary>
         /// <param name="address"><para>An path to file.</para><para>Путь к файлу.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public FileMappedResizableDirectMemory(string address) : this(address, MinimumCapacity) { }
 
         #endregion
 
         #region Methods
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void MapFile(long capacity)
         {
             if (Pointer != IntPtr.Zero)
@@ -79,6 +87,7 @@ namespace Platform.Memory
             Pointer = new IntPtr(pointer);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void UnmapFile()
         {
             if (UnmapFile(Pointer))
@@ -87,6 +96,7 @@ namespace Platform.Memory
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private bool UnmapFile(IntPtr pointer)
         {
             if (pointer == IntPtr.Zero)
@@ -108,6 +118,7 @@ namespace Platform.Memory
 
         /// <inheritdoc/>
         /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="M:Platform.Memory.ResizableDirectMemoryBase.OnReservedCapacityChanged(System.Int64,System.Int64)"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override void OnReservedCapacityChanged(long oldReservedCapacity, long newReservedCapacity)
         {
             UnmapFile();
@@ -117,6 +128,7 @@ namespace Platform.Memory
 
         /// <inheritdoc/>
         /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="M:Platform.Memory.ResizableDirectMemoryBase.DisposePointer(System.IntPtr,System.Int64)"]/*'/>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override void DisposePointer(IntPtr pointer, long usedCapacity)
         {
             if (UnmapFile(pointer))

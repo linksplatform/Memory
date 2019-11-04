@@ -1,4 +1,6 @@
-﻿namespace Platform.Memory
+﻿using System.Runtime.CompilerServices;
+
+namespace Platform.Memory
 {
     /// <summary>
     /// <para>Represents a memory block with access via indexer.</para>
@@ -17,13 +19,19 @@
 
         /// <inheritdoc/>
         /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="P:Platform.Memory.IMemory.Size"]/*'/>
-        public long Size => _array.Length;
+        public long Size
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => _array.Length;
+        }
 
         /// <inheritdoc/>
         /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="P:Platform.Memory.IArrayMemory`1.Item(System.Int64)"]/*'/>
         public TElement this[long index]
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => _array[index];
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _array[index] = value;
         }
 
@@ -36,6 +44,7 @@
         /// <para>Инициализирует новый экземпляр класса <see cref="ArrayMemory{TElement}"/>.</para>
         /// </summary>
         /// <param name="size"><para>Size in bytes.</para><para>Размер в байтах.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public ArrayMemory(long size) => _array = new TElement[size];
 
         #endregion

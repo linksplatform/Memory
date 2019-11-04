@@ -1,4 +1,6 @@
-﻿namespace Platform.Memory
+﻿using System.Runtime.CompilerServices;
+
+namespace Platform.Memory
 {
     /// <summary>
     /// <para>Represents a resizable memory block interface with direct access (via unmanaged pointers).</para>
@@ -20,7 +22,13 @@
         /// Не может быть меньше используемой емкости блока памяти.
         /// </para>
         /// </remarks>
-        long ReservedCapacity { get; set; }
+        long ReservedCapacity
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set;
+        }
 
         /// <summary>
         /// <para>Gets or sets the used capacity in bytes of this memory block.</para>
@@ -42,6 +50,12 @@
         /// Рекомендуется уменьшать фактический размер блока памяти до используемого размера (указанного в этом свойстве) после завершения использования блока памяти.
         /// </para>
         /// </remarks>
-        long UsedCapacity { get; set; }
+        long UsedCapacity
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set;
+        }
     }
 }
