@@ -189,6 +189,14 @@ references:
   fullName.vb: Platform.Memory.FileArrayMemory(Of TElement)
   nameWithType: FileArrayMemory<TElement>
   nameWithType.vb: FileArrayMemory(Of TElement)
+- uid: Platform.Memory.FileArrayMemory`1.#ctor(System.IO.FileStream)
+  name: FileArrayMemory(FileStream)
+  href: api/Platform.Memory.FileArrayMemory-1.html#Platform_Memory_FileArrayMemory_1__ctor_System_IO_FileStream_
+  commentId: M:Platform.Memory.FileArrayMemory`1.#ctor(System.IO.FileStream)
+  fullName: Platform.Memory.FileArrayMemory<TElement>.FileArrayMemory(System.IO.FileStream)
+  fullName.vb: Platform.Memory.FileArrayMemory(Of TElement).FileArrayMemory(System.IO.FileStream)
+  nameWithType: FileArrayMemory<TElement>.FileArrayMemory(FileStream)
+  nameWithType.vb: FileArrayMemory(Of TElement).FileArrayMemory(FileStream)
 - uid: Platform.Memory.FileArrayMemory`1.#ctor(System.String)
   name: FileArrayMemory(String)
   href: api/Platform.Memory.FileArrayMemory-1.html#Platform_Memory_FileArrayMemory_1__ctor_System_String_
