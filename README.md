@@ -1,5 +1,5 @@
 [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Memory)](https://www.nuget.org/packages/Platform.Memory)
-[![Build Status](https://travis-ci.com/linksplatform/Memory.svg?branch=master)](https://travis-ci.com/linksplatform/Memory)
+[![Actions Status](https://github.com/linksplatform/Memory/workflows/CD/badge.svg)](https://github.com/linksplatform/Memory/actions?workflow=CD)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9aaabf24441141439ea8419c71484feb)](https://app.codacy.com/app/drakonard/Memory?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Memory&utm_campaign=Badge_Grade_Dashboard)
 [![CodeFactor](https://www.codefactor.io/repository/github/linksplatform/memory/badge)](https://www.codefactor.io/repository/github/linksplatform/memory)
 
