@@ -56,7 +56,7 @@ namespace Platform.Memory
                 minimumReservedCapacity = MinimumCapacity;
             }
             Path = path;
-            var size = FileHelpers.GetSize(Path);
+            var size = FileHelpers.GetSize(path);
             ReservedCapacity = size > minimumReservedCapacity ? ((size / minimumReservedCapacity) + 1) * minimumReservedCapacity : minimumReservedCapacity;
             UsedCapacity = size;
         }
@@ -65,9 +65,9 @@ namespace Platform.Memory
         /// <para>Initializes a new instance of the <see cref="FileMappedResizableDirectMemory"/> class.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="FileMappedResizableDirectMemory"/>.</para>
         /// </summary>
-        /// <param name="address"><para>An path to file.</para><para>Путь к файлу.</para></param>
+        /// <param name="path"><para>An path to file.</para><para>Путь к файлу.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public FileMappedResizableDirectMemory(string address) : this(address, MinimumCapacity) { }
+        public FileMappedResizableDirectMemory(string path) : this(path, MinimumCapacity) { }
 
         #endregion
 
@@ -80,7 +80,7 @@ namespace Platform.Memory
             {
                 return;
             }
-            _file = MemoryMappedFile.CreateFromFile(Path, FileMode.Open, mapName: null, capacity, MemoryMappedFileAccess.ReadWrite);
+            _file = MemoryMappedFile.CreateFromFile(Path, FileMode.OpenOrCreate, mapName: null, capacity, MemoryMappedFileAccess.ReadWrite);
             _accessor = _file.CreateViewAccessor();
             byte* pointer = null;
             _accessor.SafeMemoryMappedViewHandle.AcquirePointer(ref pointer);
