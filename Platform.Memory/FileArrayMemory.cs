@@ -16,7 +16,6 @@ namespace Platform.Memory
     {
         #region Fields
 
-        private readonly string _address;
         private readonly FileStream _file;
 
         #endregion
@@ -57,7 +56,7 @@ namespace Platform.Memory
         protected override string ObjectName
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => $"File stored memory block at '{_address}' path.";
+            get => $"File stored memory block at '{_file.Name}' path.";
         }
 
         #endregion
@@ -68,13 +67,17 @@ namespace Platform.Memory
         /// <para>Initializes a new instance of the <see cref="FileArrayMemory{TElement}"/> class.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="FileArrayMemory{TElement}"/>.</para>
         /// </summary>
+        /// <param name="file"><para>File stream.</para><para>Файловый поток.</para></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public FileArrayMemory(FileStream file) => _file = file;
+
+        /// <summary>
+        /// <para>Initializes a new instance of the <see cref="FileArrayMemory{TElement}"/> class.</para>
+        /// <para>Инициализирует новый экземпляр класса <see cref="FileArrayMemory{TElement}"/>.</para>
+        /// </summary>
         /// <param name="path"><para>An path to file.</para><para>Путь к файлу.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public FileArrayMemory(string path)
-        {
-            _address = path;
-            _file = File.Open(path, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-        }
+        public FileArrayMemory(string path) : this(File.Open(path, FileMode.OpenOrCreate)) { }
 
         #endregion
 
@@ -84,7 +87,7 @@ namespace Platform.Memory
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override void Dispose(bool manual, bool wasDisposed)
         {
-            if(!wasDisposed)
+            if (!wasDisposed)
             {
                 _file.DisposeIfPossible();
             }
