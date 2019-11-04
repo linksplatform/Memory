@@ -19,7 +19,7 @@ namespace Platform.Memory
         /// <para>Gets minimum capacity in bytes.</para>
         /// <para>Возвращает минимальную емкость в байтах.</para>
         /// </summary>
-        public static readonly long MinimumCapacity = 4096;
+        public static readonly long MinimumCapacity = Environment.SystemPageSize;
 
         #endregion
 
