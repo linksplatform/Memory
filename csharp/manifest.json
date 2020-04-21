@@ -18,163 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "KKFe68CKl89vqoK/zE/L6Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Memory.ArrayMemory-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Memory.ArrayMemory-1.html",
-          "hash": "S7tiJQKS/u6bov6E1oIQxg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Memory.DirectMemoryAsArrayMemoryAdapter-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Memory.DirectMemoryAsArrayMemoryAdapter-1.html",
-          "hash": "RkhGVDZxZHf9FjPJleinVg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Memory.FileArrayMemory-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Memory.FileArrayMemory-1.html",
-          "hash": "XJPLyCz++0MQbX5u+pMjcQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Memory.FileMappedResizableDirectMemory.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Memory.FileMappedResizableDirectMemory.html",
-          "hash": "l4UjULr1FXDfgNGjXOq8UQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Memory.HeapResizableDirectMemory.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Memory.HeapResizableDirectMemory.html",
-          "hash": "YlHTf3kuacNETBMyXIepmw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Memory.IArrayMemory-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Memory.IArrayMemory-1.html",
-          "hash": "0CCfhPwfQKsmQDFcyNPbMA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Memory.IDirectMemory.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Memory.IDirectMemory.html",
-          "hash": "M9UZRQFGNvBtzvriiC8a1w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Memory.IMemory.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Memory.IMemory.html",
-          "hash": "Iy192+nq00nT6ouFpQ7/HA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Memory.IResizableDirectMemory.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Memory.IResizableDirectMemory.html",
-          "hash": "ieZNyX+5InZfyXYK2X7wfA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Memory.ResizableDirectMemoryBase.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Memory.ResizableDirectMemoryBase.html",
-          "hash": "K9QSg5jtYlbnrAFX9ti13A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Memory.TemporaryFileMappedResizableDirectMemory.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Memory.TemporaryFileMappedResizableDirectMemory.html",
-          "hash": "FYk08zf0F9cdJ2Y2n5nLiA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Memory.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Memory.html",
-          "hash": "PFeb/tQYoh+f0GrS8fPDsw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "obj/api/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "QXV/jbTt36GraOBcquKu7A=="
+          "hash": "O8NmurE4T8B/HumVoqZMJA=="
         }
       },
       "is_incremental": false,
@@ -189,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "F2kXO1a2Sk3htRYO0ZFGOg=="
+          "hash": "S5G0z6947YfCknLVnRPrzA=="
         }
       },
       "is_incremental": false,
@@ -211,12 +55,6 @@
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 1,
-          "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 12,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
