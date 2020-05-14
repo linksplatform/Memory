@@ -1,0 +1,578 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ResizableDirectMemoryBase
+   | LinksPlatform's Platform.Memory Library </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ResizableDirectMemoryBase
+   | LinksPlatform's Platform.Memory Library ">
+    <meta name="generator" content="docfx 2.51.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Platform.Memory.ResizableDirectMemoryBase">
+  
+  
+  <h1 id="Platform_Memory_ResizableDirectMemoryBase" data-uid="Platform.Memory.ResizableDirectMemoryBase" class="text-break">Class ResizableDirectMemoryBase
+  </h1>
+  <div class="markdown level0 summary"><p>Provides a base implementation for the resizable memory block with direct access (via unmanaged pointers).</p>
+<p>Предоставляет базовую реализацию для блока памяти c изменяемым размером и прямым доступом (через неуправляемые указатели).</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">ResizableDirectMemoryBase</span></div>
+      <div class="level2"><a class="xref" href="Platform.Memory.FileMappedResizableDirectMemory.html">FileMappedResizableDirectMemory</a></div>
+      <div class="level2"><a class="xref" href="Platform.Memory.HeapResizableDirectMemory.html">HeapResizableDirectMemory</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Platform.Memory.IResizableDirectMemory.html">IResizableDirectMemory</a></div>
+    <div><a class="xref" href="Platform.Memory.IDirectMemory.html">IDirectMemory</a></div>
+    <div><a class="xref" href="Platform.Memory.IMemory.html">IMemory</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Platform.Memory.html">Platform.Memory</a></h6>
+  <h6><strong>Assembly</strong>: Platform.Memory.dll</h6>
+  <h5 id="Platform_Memory_ResizableDirectMemoryBase_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ResizableDirectMemoryBase : DisposableBase, IResizableDirectMemory, IDirectMemory, IMemory, IDisposable</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/linksplatform/Memory/new/master/apiSpec/new?filename=Platform_Memory_ResizableDirectMemoryBase_MinimumCapacity.md&amp;value=---%0Auid%3A%20Platform.Memory.ResizableDirectMemoryBase.MinimumCapacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/linksplatform/Memory/blob/a266ffe217544eb60ae9fe94ce54d4e80199fab8/csharp/Platform.Memory/ResizableDirectMemoryBase.cs/#L22">View Source</a>
+  </span>
+  <h4 id="Platform_Memory_ResizableDirectMemoryBase_MinimumCapacity" data-uid="Platform.Memory.ResizableDirectMemoryBase.MinimumCapacity">MinimumCapacity</h4>
+  <div class="markdown level1 summary"><p>Gets minimum capacity in bytes.</p>
+<p>Возвращает минимальную емкость в байтах.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly long MinimumCapacity</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/linksplatform/Memory/new/master/apiSpec/new?filename=Platform_Memory_ResizableDirectMemoryBase_AllowMultipleDisposeCalls.md&amp;value=---%0Auid%3A%20Platform.Memory.ResizableDirectMemoryBase.AllowMultipleDisposeCalls%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/linksplatform/Memory/blob/a266ffe217544eb60ae9fe94ce54d4e80199fab8/csharp/Platform.Memory/ResizableDirectMemoryBase.cs/#L122">View Source</a>
+  </span>
+  <a id="Platform_Memory_ResizableDirectMemoryBase_AllowMultipleDisposeCalls_" data-uid="Platform.Memory.ResizableDirectMemoryBase.AllowMultipleDisposeCalls*"></a>
+  <h4 id="Platform_Memory_ResizableDirectMemoryBase_AllowMultipleDisposeCalls" data-uid="Platform.Memory.ResizableDirectMemoryBase.AllowMultipleDisposeCalls">AllowMultipleDisposeCalls</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool AllowMultipleDisposeCalls { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/linksplatform/Memory/new/master/apiSpec/new?filename=Platform_Memory_ResizableDirectMemoryBase_Pointer.md&amp;value=---%0Auid%3A%20Platform.Memory.ResizableDirectMemoryBase.Pointer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/linksplatform/Memory/blob/a266ffe217544eb60ae9fe94ce54d4e80199fab8/csharp/Platform.Memory/ResizableDirectMemoryBase.cs/#L52">View Source</a>
+  </span>
+  <a id="Platform_Memory_ResizableDirectMemoryBase_Pointer_" data-uid="Platform.Memory.ResizableDirectMemoryBase.Pointer*"></a>
+  <h4 id="Platform_Memory_ResizableDirectMemoryBase_Pointer" data-uid="Platform.Memory.ResizableDirectMemoryBase.Pointer">Pointer</h4>
+  <div class="markdown level1 summary"><p>Gets the pointer to the beginning of this memory block.</p>
+<p>Возвращает указатель на начало блока памяти.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntPtr Pointer { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></td>
+        <td><p>The memory block is disposed.</p><p>Блок памяти уже высвобожден.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/linksplatform/Memory/new/master/apiSpec/new?filename=Platform_Memory_ResizableDirectMemoryBase_ReservedCapacity.md&amp;value=---%0Auid%3A%20Platform.Memory.ResizableDirectMemoryBase.ReservedCapacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/linksplatform/Memory/blob/a266ffe217544eb60ae9fe94ce54d4e80199fab8/csharp/Platform.Memory/ResizableDirectMemoryBase.cs/#L72">View Source</a>
+  </span>
+  <a id="Platform_Memory_ResizableDirectMemoryBase_ReservedCapacity_" data-uid="Platform.Memory.ResizableDirectMemoryBase.ReservedCapacity*"></a>
+  <h4 id="Platform_Memory_ResizableDirectMemoryBase_ReservedCapacity" data-uid="Platform.Memory.ResizableDirectMemoryBase.ReservedCapacity">ReservedCapacity</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the reserved capacity in bytes of this memory block.</p>
+<p>Возвращает или устаналивает зарезервированный размер блока памяти в байтах.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long ReservedCapacity { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Platform_Memory_ResizableDirectMemoryBase_ReservedCapacity_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+If less then zero the value is replaced with zero.
+Cannot be less than the used capacity of this memory block.
+</p>
+<p>
+Если меньше нуля, значение заменяется на ноль.
+Не может быть меньше используемой емкости блока памяти.
+</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></td>
+        <td><p>The memory block is disposed.</p><p>Блок памяти уже высвобожден.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>Attempted to set the reserved capacity to a value that is less than the used capacity.</p><p>Была выполнена попытка установить зарезервированную емкость на значение, которое меньше используемой емкости.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/linksplatform/Memory/new/master/apiSpec/new?filename=Platform_Memory_ResizableDirectMemoryBase_Size.md&amp;value=---%0Auid%3A%20Platform.Memory.ResizableDirectMemoryBase.Size%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/linksplatform/Memory/blob/a266ffe217544eb60ae9fe94ce54d4e80199fab8/csharp/Platform.Memory/ResizableDirectMemoryBase.cs/#L39">View Source</a>
+  </span>
+  <a id="Platform_Memory_ResizableDirectMemoryBase_Size_" data-uid="Platform.Memory.ResizableDirectMemoryBase.Size*"></a>
+  <h4 id="Platform_Memory_ResizableDirectMemoryBase_Size" data-uid="Platform.Memory.ResizableDirectMemoryBase.Size">Size</h4>
+  <div class="markdown level1 summary"><p>Gets the size in bytes of this memory block.</p>
+<p>Возвращает размер блока памяти в байтах.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long Size { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></td>
+        <td><p>The memory block is disposed.</p><p>Блок памяти уже высвобожден.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/linksplatform/Memory/new/master/apiSpec/new?filename=Platform_Memory_ResizableDirectMemoryBase_UsedCapacity.md&amp;value=---%0Auid%3A%20Platform.Memory.ResizableDirectMemoryBase.UsedCapacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/linksplatform/Memory/blob/a266ffe217544eb60ae9fe94ce54d4e80199fab8/csharp/Platform.Memory/ResizableDirectMemoryBase.cs/#L97">View Source</a>
+  </span>
+  <a id="Platform_Memory_ResizableDirectMemoryBase_UsedCapacity_" data-uid="Platform.Memory.ResizableDirectMemoryBase.UsedCapacity*"></a>
+  <h4 id="Platform_Memory_ResizableDirectMemoryBase_UsedCapacity" data-uid="Platform.Memory.ResizableDirectMemoryBase.UsedCapacity">UsedCapacity</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the used capacity in bytes of this memory block.</p>
+<p>Возвращает или устанавливает используемый размер в блоке памяти (в байтах).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long UsedCapacity { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Platform_Memory_ResizableDirectMemoryBase_UsedCapacity_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+If less then zero the value is replaced with zero.
+Cannot be greater than the reserved capacity of this memory block.
+</p>
+<p>
+It is recommended to reduce the reserved capacity of the memory block to the used capacity (specified in this property) after the completion of the use of the memory block.
+</p>
+<p>
+Если меньше нуля, значение заменяется на ноль.
+Не может быть больше, чем зарезервированная емкость этого блока памяти.
+</p>
+<p>
+Рекомендуется уменьшать фактический размер блока памяти до используемого размера (указанного в этом свойстве) после завершения использования блока памяти.
+</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></td>
+        <td><p>The memory block is disposed.</p><p>Блок памяти уже высвобожден.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>Attempted to set the used capacity to a value that is greater than the reserved capacity or less than zero.</p><p>Была выполнена попытка установить используемую емкость на значение, которое больше, чем зарезервированная емкость или меньше нуля.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/linksplatform/Memory/new/master/apiSpec/new?filename=Platform_Memory_ResizableDirectMemoryBase_Dispose_System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20Platform.Memory.ResizableDirectMemoryBase.Dispose(System.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/linksplatform/Memory/blob/a266ffe217544eb60ae9fe94ce54d4e80199fab8/csharp/Platform.Memory/ResizableDirectMemoryBase.cs/#L155">View Source</a>
+  </span>
+  <a id="Platform_Memory_ResizableDirectMemoryBase_Dispose_" data-uid="Platform.Memory.ResizableDirectMemoryBase.Dispose*"></a>
+  <h4 id="Platform_Memory_ResizableDirectMemoryBase_Dispose_System_Boolean_System_Boolean_" data-uid="Platform.Memory.ResizableDirectMemoryBase.Dispose(System.Boolean,System.Boolean)">Dispose(Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Dispose(bool manual, bool wasDisposed)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">manual</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">wasDisposed</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/linksplatform/Memory/new/master/apiSpec/new?filename=Platform_Memory_ResizableDirectMemoryBase_DisposePointer_System_IntPtr_System_Int64_.md&amp;value=---%0Auid%3A%20Platform.Memory.ResizableDirectMemoryBase.DisposePointer(System.IntPtr%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/linksplatform/Memory/blob/a266ffe217544eb60ae9fe94ce54d4e80199fab8/csharp/Platform.Memory/ResizableDirectMemoryBase.cs/#L147">View Source</a>
+  </span>
+  <a id="Platform_Memory_ResizableDirectMemoryBase_DisposePointer_" data-uid="Platform.Memory.ResizableDirectMemoryBase.DisposePointer*"></a>
+  <h4 id="Platform_Memory_ResizableDirectMemoryBase_DisposePointer_System_IntPtr_System_Int64_" data-uid="Platform.Memory.ResizableDirectMemoryBase.DisposePointer(System.IntPtr,System.Int64)">DisposePointer(IntPtr, Int64)</h4>
+  <div class="markdown level1 summary"><p>Executed when it is time to dispose <a class="xref" href="Platform.Memory.ResizableDirectMemoryBase.html#Platform_Memory_ResizableDirectMemoryBase_Pointer">Pointer</a>.</p>
+<p>Выполняется, когда пришло время высвободить <a class="xref" href="Platform.Memory.ResizableDirectMemoryBase.html#Platform_Memory_ResizableDirectMemoryBase_Pointer">Pointer</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void DisposePointer(IntPtr pointer, long usedCapacity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><span class="parametername">pointer</span></td>
+        <td><p>The pointer to a memory block.</p><p>Указатель на блок памяти.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td><span class="parametername">usedCapacity</span></td>
+        <td><p>The used capacity of the memory block in bytes.</p><p>Используемая емкость блока памяти в байтах.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/linksplatform/Memory/new/master/apiSpec/new?filename=Platform_Memory_ResizableDirectMemoryBase_OnReservedCapacityChanged_System_Int64_System_Int64_.md&amp;value=---%0Auid%3A%20Platform.Memory.ResizableDirectMemoryBase.OnReservedCapacityChanged(System.Int64%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/linksplatform/Memory/blob/a266ffe217544eb60ae9fe94ce54d4e80199fab8/csharp/Platform.Memory/ResizableDirectMemoryBase.cs/#L138">View Source</a>
+  </span>
+  <a id="Platform_Memory_ResizableDirectMemoryBase_OnReservedCapacityChanged_" data-uid="Platform.Memory.ResizableDirectMemoryBase.OnReservedCapacityChanged*"></a>
+  <h4 id="Platform_Memory_ResizableDirectMemoryBase_OnReservedCapacityChanged_System_Int64_System_Int64_" data-uid="Platform.Memory.ResizableDirectMemoryBase.OnReservedCapacityChanged(System.Int64,System.Int64)">OnReservedCapacityChanged(Int64, Int64)</h4>
+  <div class="markdown level1 summary"><p>Executed on the event of change for <a class="xref" href="Platform.Memory.ResizableDirectMemoryBase.html#Platform_Memory_ResizableDirectMemoryBase_ReservedCapacity">ReservedCapacity</a> property.</p>
+<p>Выполняется в случае изменения свойства <a class="xref" href="Platform.Memory.ResizableDirectMemoryBase.html#Platform_Memory_ResizableDirectMemoryBase_ReservedCapacity">ReservedCapacity</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void OnReservedCapacityChanged(long oldReservedCapacity, long newReservedCapacity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td><span class="parametername">oldReservedCapacity</span></td>
+        <td><p>The old reserved capacity of the memory block in bytes.</p><p>Старая зарезервированная емкость блока памяти в байтах.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td><span class="parametername">newReservedCapacity</span></td>
+        <td><p>The new reserved capacity of the memory block in bytes.</p><p>Новая зарезервированная емкость блока памяти в байтах.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Platform.Memory.IResizableDirectMemory.html">IResizableDirectMemory</a>
+  </div>
+  <div>
+      <a class="xref" href="Platform.Memory.IDirectMemory.html">IDirectMemory</a>
+  </div>
+  <div>
+      <a class="xref" href="Platform.Memory.IMemory.html">IMemory</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/linksplatform/Memory/new/master/apiSpec/new?filename=Platform_Memory_ResizableDirectMemoryBase.md&amp;value=---%0Auid%3A%20Platform.Memory.ResizableDirectMemoryBase%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/linksplatform/Memory/blob/a266ffe217544eb60ae9fe94ce54d4e80199fab8/csharp/Platform.Memory/ResizableDirectMemoryBase.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
