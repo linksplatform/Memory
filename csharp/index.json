@@ -62,6 +62,6 @@
   "README.html": {
     "href": "README.html",
     "title": "Memory | LinksPlatform's Platform.Memory Library",
-    "keywords": "Memory LinksPlatform's Platform.Memory Class Library. Namespace: Platform.Memory Forked from: Konard/LinksPlatform/Platform/Platform.Memory NuGet package: Platform.Memory Documentation PDF file with code for e-readers. Depend on System.IO.MemoryMappedFiles Platform.IO Dependent libraries Platform.Data.Doublets"
+    "keywords": "Memory LinksPlatform's Platform.Memory Class Library contains classes for memory management simplification. Here you can find multiple implementations of IMemory interface. The data can be accessed using the raw pointer or by element's index and can be stored in volatile memory: HeapResizableDirect , ArrayMemory or in non-volatile memory: FileMappedResizableDirectMemory , TemporaryFileMappedResizableDirectMemory , FileArrayMemory . Namespace: Platform.Memory Forked from: Konard/LinksPlatform/Platform/Platform.Memory NuGet package: Platform.Memory Documentation PDF file with code for e-readers. Depend on System.IO.MemoryMappedFiles Platform.IO Dependent libraries Platform.Data.Doublets"
   }
 }
