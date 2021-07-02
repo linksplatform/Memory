@@ -25,8 +25,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Lowest supported version of .NET Framework is now 4.7.2.
-Platform.IO dependency updated from 0.1.5 to 0.2.0.</PackageReleaseNotes>
+    <PackageReleaseNotes>Platform.IO dependency updated from 0.2.0 to 0.2.2.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
