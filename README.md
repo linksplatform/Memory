@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b50408b8bf1443c6900c4253449d9568)](https://app.codacy.com/gh/linksplatform/Memory?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Memory&utm_campaign=Badge_Grade_Settings)
 [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Memory)](https://www.nuget.org/packages/Platform.Memory)
 [![Actions Status](https://github.com/linksplatform/Memory/workflows/CD/badge.svg)](https://github.com/linksplatform/Memory/actions?workflow=CD)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9aaabf24441141439ea8419c71484feb)](https://app.codacy.com/app/drakonard/Memory?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Memory&utm_campaign=Badge_Grade_Dashboard)
