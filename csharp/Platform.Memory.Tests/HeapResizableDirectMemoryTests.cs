@@ -2,8 +2,20 @@ using Xunit;
 
 namespace Platform.Memory.Tests
 {
+    /// <summary>
+    /// <para>
+    /// Represents the heap resizable direct memory tests.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     public unsafe class HeapResizableDirectMemoryTests
     {
+        /// <summary>
+        /// <para>
+        /// Tests that correct memory reallocation test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public void CorrectMemoryReallocationTest()
         {
@@ -15,6 +27,20 @@ namespace Platform.Memory.Tests
             Assert.Equal(0, value1);
         }
 
+        /// <summary>
+        /// <para>
+        /// Gets the last byte using the specified heap memory.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="heapMemory">
+        /// <para>The heap memory.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The byte</para>
+        /// <para></para>
+        /// </returns>
         private static byte GetLastByte(HeapResizableDirectMemory heapMemory)
         {
             var pointer1 = (void*)heapMemory.Pointer;

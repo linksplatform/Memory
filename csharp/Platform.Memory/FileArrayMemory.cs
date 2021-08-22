@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using System.Runtime.CompilerServices;
 using Platform.Disposables;
 using Platform.Unsafe;
@@ -16,6 +16,12 @@ namespace Platform.Memory
     {
         #region Fields
 
+        /// <summary>
+        /// <para>
+        /// The file.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private readonly FileStream _file;
 
         #endregion

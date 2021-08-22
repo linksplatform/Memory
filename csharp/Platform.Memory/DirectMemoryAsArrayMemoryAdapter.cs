@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.CompilerServices;
 using Platform.Disposables;
 using Platform.Exceptions;
@@ -16,6 +16,12 @@ namespace Platform.Memory
     {
         #region Fields
 
+        /// <summary>
+        /// <para>
+        /// The memory.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private readonly IDirectMemory _memory;
 
         #endregion

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.IO.MemoryMappedFiles;
 using System.Runtime.CompilerServices;
@@ -17,7 +17,19 @@ namespace Platform.Memory
     {
         #region Fields
 
+        /// <summary>
+        /// <para>
+        /// The file.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private MemoryMappedFile _file;
+        /// <summary>
+        /// <para>
+        /// The accessor.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private MemoryMappedViewAccessor _accessor;
 
         /// <summary>
@@ -73,6 +85,16 @@ namespace Platform.Memory
 
         #region Methods
 
+        /// <summary>
+        /// <para>
+        /// Maps the file using the specified capacity.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="capacity">
+        /// <para>The capacity.</para>
+        /// <para></para>
+        /// </param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void MapFile(long capacity)
         {
@@ -87,6 +109,12 @@ namespace Platform.Memory
             Pointer = new IntPtr(pointer);
         }
 
+        /// <summary>
+        /// <para>
+        /// Unmaps the file.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void UnmapFile()
         {
@@ -96,6 +124,20 @@ namespace Platform.Memory
             }
         }
 
+        /// <summary>
+        /// <para>
+        /// Determines whether this instance unmap file.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="pointer">
+        /// <para>The pointer.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The bool</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private bool UnmapFile(IntPtr pointer)
         {

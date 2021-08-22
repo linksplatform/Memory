@@ -1,4 +1,4 @@
-﻿using System.Runtime.CompilerServices;
+using System.Runtime.CompilerServices;
 
 namespace Platform.Memory
 {
@@ -11,6 +11,12 @@ namespace Platform.Memory
     {
         #region Fields
 
+        /// <summary>
+        /// <para>
+        /// The array.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private readonly TElement[] _array;
 
         #endregion
