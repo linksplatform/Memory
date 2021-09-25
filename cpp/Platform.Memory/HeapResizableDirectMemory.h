@@ -1,39 +1,73 @@
 ﻿namespace Platform::Memory
 {
-    public unsafe class HeapResizableDirectMemory : public ResizableDirectMemoryBase
+    namespace Internal
     {
-        protected: override std::string ObjectName
+        auto as_bytes(void* raw_pointer, std::size_t capacity)
         {
-            get => std::string("Heap stored memory block at ").append(Platform::Converters::To<std::string>(Pointer)).append(" address.");
+            auto pointer = static_cast<std::byte*>(raw_pointer);
+            return std::ranges::subrange(pointer, pointer + capacity);
         }
 
-        public: HeapResizableDirectMemory(std::int64_t minimumReservedCapacity)
+        void ZeroBlock(void* unsafe_pointer, std::size_t capacity)
+        {
+            auto range = as_bytes(unsafe_pointer, capacity);
+            std::for_each(
+                std::execution::par_unseq,
+                range.begin(), range.end(),
+            [](auto&& byte) {
+                byte = std::byte{0};
+            });
+        }
+    }
+
+    class HeapResizableDirectMemory final : public ResizableDirectMemoryBase
+    {
+        using ResizableDirectMemoryBase::capacity_t;
+        //protected: override std::string ObjectName
+        //{
+        //    get => std::string("Heap stored memory block at ").append(Platform::Converters::To<std::string>(Pointer)).append(" address.");
+        //}
+
+        public: HeapResizableDirectMemory(capacity_t minimumReservedCapacity = MinimumCapacity)
         {
             if (minimumReservedCapacity < MinimumCapacity)
             {
                 minimumReservedCapacity = MinimumCapacity;
             }
-            ReservedCapacity = minimumReservedCapacity;
-            UsedCapacity = 0;
+            ReservedCapacity(minimumReservedCapacity);
+            UsedCapacity(0);
         }
 
-        public: HeapResizableDirectMemory() : this(MinimumCapacity) { }
-
-        protected: void DisposePointer(IntPtr pointer, std::int64_t usedCapacity) override { Marshal.FreeHGlobal(pointer); }
-
-        protected: void OnReservedCapacityChanged(std::int64_t oldReservedCapacity, std::int64_t newReservedCapacity) override
+        HeapResizableDirectMemory(const HeapResizableDirectMemory& other)
         {
-            if (Pointer == IntPtr.0)
+            auto mem = Internal::as_bytes(other.Pointer(), other.UsedCapacity());
+            Pointer() = std::copy(
+                std::execution::par_unseq,
+                mem.begin(), mem.end(),
+                static_cast<std::byte*>(Pointer())
+            );
+            ReservedCapacity(other.ReservedCapacity());
+            UsedCapacity(other.UsedCapacity());
+        }
+
+        protected: void OnReservedCapacityChanged(capacity_t oldReservedCapacity, capacity_t newReservedCapacity) final
+        {
+            if (Pointer() == nullptr)
             {
-                Pointer = Marshal.AllocHGlobal(this->IntPtr(newReservedCapacity));
-                MemoryBlock.0((void*)Pointer, newReservedCapacity);
+                Pointer() = std::malloc(newReservedCapacity);
+                Internal::ZeroBlock(Pointer(), newReservedCapacity);
             }
             else
             {
-                Pointer = Marshal.ReAllocHGlobal(Pointer, this->IntPtr(newReservedCapacity));
-                auto pointer = (std::uint8_t*)Pointer + oldReservedCapacity;
-                MemoryBlock.0(pointer, newReservedCapacity - oldReservedCapacity);
+                Pointer() = std::realloc(Pointer(), newReservedCapacity);
+                auto pointer = static_cast<std::byte*>(Pointer()) + oldReservedCapacity;
+                Internal::ZeroBlock(pointer, newReservedCapacity - oldReservedCapacity);
             }
+        }
+
+        public: ~HeapResizableDirectMemory() final
+        {
+            delete static_cast<std::byte*>(Pointer());
         }
     };
 }

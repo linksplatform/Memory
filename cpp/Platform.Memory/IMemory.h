@@ -3,6 +3,8 @@
     class IMemory
     {
     public:
-        virtual std::int64_t Size() = 0;
+        virtual std::size_t Size() = 0;
+
+        std::size_t size() { return Size(); }
     };
 }

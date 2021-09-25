@@ -1,8 +1,14 @@
 ﻿namespace Platform::Memory
 {
-    class IDirectMemory : public IMemory, public IDisposable
+
+
+    class IDirectMemory : public IMemory
     {
+    protected:
+        using pointer_t = void*;
     public:
-        virtual IntPtr Pointer() = 0;
+        virtual pointer_t& Pointer() = 0;
+
+        virtual const pointer_t& Pointer() const = 0;
     };
 }

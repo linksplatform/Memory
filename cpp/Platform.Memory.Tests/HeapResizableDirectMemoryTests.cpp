@@ -1,21 +1,26 @@
 ﻿namespace Platform::Memory::Tests
 {
-    public unsafe TEST_CLASS(HeapResizableDirectMemoryTests)
+    std::byte GetLastByte(const HeapResizableDirectMemory& heapMemory)
     {
-        public: TEST_METHOD(CorrectMemoryReallocationTest)
-        {
-            using auto heapMemory = HeapResizableDirectMemory();
-            auto value1 = GetLastByte(heapMemory);
-            heapMemory.ReservedCapacity *= 2;
-            auto value2 = GetLastByte(heapMemory);
-            Assert::AreEqual(value1, value2);
-            Assert::AreEqual(0, value1);
-        }
+        auto pointer1 = heapMemory.Pointer();
+        return *((std::byte*)pointer1 + heapMemory.ReservedCapacity() - 1);
+    }
 
-        private: static std::uint8_t GetLastByte(HeapResizableDirectMemory heapMemory)
-        {
-            auto pointer1 = (void*)heapMemory.Pointer;
-            return *((std::uint8_t*)pointer1 + heapMemory.ReservedCapacity - 1);
-        }
-    };
+    std::byte GetLastByteByCopy(HeapResizableDirectMemory heapMemory)
+    {
+        auto pointer1 = heapMemory.Pointer();
+        return *((std::byte*)pointer1 + heapMemory.ReservedCapacity() - 1);
+    }
+
+    TEST(HeapResizableDirectMemory, CorrectMemoryReallocation)
+    {
+        auto heapMemory = HeapResizableDirectMemory();
+        auto value1 = GetLastByte(heapMemory);
+        heapMemory.ReservedCapacity(heapMemory.ReservedCapacity() * 2);
+        auto value2 = GetLastByteByCopy(heapMemory);
+        ASSERT_EQ(value1, value2);
+        ASSERT_EQ(std::byte{0}, value1);
+
+        ASSERT_NE(&value1, &value2);
+    }
 }

@@ -3,19 +3,18 @@
     template <typename ...> class ArrayMemory;
     template <typename TElement> class ArrayMemory<TElement> : public IArrayMemory<TElement>
     {
-        private: TElement _array[N] = { {0} };
+        private: std::vector<TElement> _array{};
 
-        public: std::int64_t Size()
+        public: size_t Size()
         {
-            return _array.Length;
+            return _array.size();
         }
 
-        public: TElement this[std::int64_t index]
-        {
-            get => _array[index];
-            set => _array[index] = value;
-        }
+        TElement& operator[](std::size_t index) { return _array[index]; }
+        const TElement& operator[](std::size_t index) const { return _array[index]; }
 
-        public: ArrayMemory(std::int64_t size) { _array = TElement[size]; }
+        public: ArrayMemory() = default;
+
+        public: explicit ArrayMemory(std::size_t size) : _array(size) {}
     };
 }
