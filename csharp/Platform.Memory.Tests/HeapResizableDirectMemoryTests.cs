@@ -43,7 +43,7 @@ namespace Platform.Memory.Tests
         /// </returns>
         private static byte GetLastByte(HeapResizableDirectMemory heapMemory)
         {
-            var pointer1 = (void*)heapMemory.pointer_t;
+            var pointer1 = (void*)heapMemory.Pointer;
             return *((byte*)pointer1 + heapMemory.ReservedCapacity - 1);
         }
     }
