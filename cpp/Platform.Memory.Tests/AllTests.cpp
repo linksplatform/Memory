@@ -1,17 +1,21 @@
 #include <gtest/gtest.h>
 #include <Platform.Memory.h>
 
-#include "HeapResizableDirectMemoryTests.cpp"
+//#include "HeapResizableDirectMemoryTests.cpp"
 
-auto main_() -> int {
-    std::uint8_t bytes[1024];
-    for (int i = 0; i < std::size(bytes); i++) {
-        bytes[i] = i;
-    }
+using namespace Platform::Memory;
 
-    Platform::Memory::Internal::ZeroBlock(bytes, std::size(bytes));
+auto main() -> int {
+    { std::ofstream{"db.links"}; }
 
-    for (auto byte : bytes) {
-        std::cout << (int)byte;
-    }
+    FileArrayMemory<int> a("db.links");
+
+    auto size = sizeof(int);
+
+    a[0*size] = 1337;
+    a[1*size] = 228;
+    a[2*size] = 177013;
+    std::cout << a[0*size] << "\n";
+    std::cout << a[1*size] << "\n";
+    std::cout << a[2*size] << "\n";
 }

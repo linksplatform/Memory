@@ -1,7 +1,5 @@
 ﻿namespace Platform::Memory
 {
-
-
     class IDirectMemory : public IMemory
     {
     protected:
