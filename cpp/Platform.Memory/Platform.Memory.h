@@ -3,7 +3,9 @@
 
 #include <Platform.Collections.h>
 
-#include <sysinfoapi.h>
+#ifdef WIN32
+    #include <sysinfoapi.h>
+#endif
 #include <execution>
 #include <fstream>
 #include <filesystem>
@@ -19,5 +21,7 @@
 #include "IResizableDirectMemory.h"
 #include "ResizableDirectMemoryBase.h"
 #include "HeapResizableDirectMemory.h"
+
+#include "DirectMemoryAsArrayMemoryAdapter.h"
 
 #endif //PLATFORM_MEMORY

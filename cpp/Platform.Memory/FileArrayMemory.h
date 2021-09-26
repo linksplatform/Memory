@@ -23,7 +23,6 @@
         }
 
         std::size_t current_index = 0;
-
         [[no_unique_address]] struct : PropertySetup<Self> {
             using PropertySetup<Self>::self;
 
@@ -54,11 +53,10 @@
         //    get => "File stored memory block at '{_file.Name}' path.";
         //}
 
-        public: FileArrayMemory(auto&& file, auto&& path)
-            : _file(std::forward<decltype(file)>(file)), path(std::forward<decltype(path)>(path)) { }
+        public: FileArrayMemory(auto&& file, std::filesystem::path path)
+            : _file(std::forward<decltype(file)>(file)), path(std::move(path)) { }
 
-        public: explicit FileArrayMemory(auto&& path)
+        public: explicit FileArrayMemory(std::filesystem::path path)
             : FileArrayMemory(std::fstream(path), path) { }
-
     };
 }

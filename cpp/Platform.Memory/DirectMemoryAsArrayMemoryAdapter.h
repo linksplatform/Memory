@@ -1,45 +1,86 @@
 ﻿namespace Platform::Memory
 {
     template <typename ...> class DirectMemoryAsArrayMemoryAdapter;
-    template <typename TElement> class DirectMemoryAsArrayMemoryAdapter<TElement> : public DisposableBase, IArrayMemory<TElement>, IDirectMemory
-        where TElement : struct
+    template <typename TElement> class DirectMemoryAsArrayMemoryAdapter<TElement> :
+        public IArrayMemory<TElement>, public IDirectMemory
     {
-        private: IDirectMemory _memory = 0;
+        using Self = DirectMemoryAsArrayMemoryAdapter<TElement>;
+        using IDirectMemory::pointer_t;
 
-        public: std::int64_t Size()
+        private: IDirectMemory& _memory;
+
+        public: std::size_t Size() final
         {
-            return _memory.Size;
+            return _memory.Size();
         }
 
-        public: IntPtr Pointer()
+        public: pointer_t& Pointer()
         {
-            return _memory.Pointer;
+            return _memory.Pointer();
         }
 
-        public: TElement this[std::int64_t index]
+        public: const pointer_t& Pointer() const
         {
-            get => Pointer.ReadElementValue<TElement>(index);
-            set => Pointer.WriteElementValue(index, value);
+            return _memory.Pointer();
         }
 
-        protected: override std::string ObjectName
+        //public: TElement this[std::int64_t index]
+        //{
+        //    get => Pointer.ReadElementValue<TElement>(index);
+        //    set => Pointer.WriteElementValue(index, value);
+        //}
+
+        //protected: override std::string ObjectName
+        //{
+        //    get => std::string("Array as memory block at '").append(Platform::Converters::To<std::string>(Pointer)).append("' address.");
+        //}
+
+        std::size_t current_index = 0;
+
+        [[no_unique_address]] struct : PropertySetup<Self> {
+            using PropertySetup<Self>::self;
+
+            operator TElement()
+            {
+                TElement element;
+                auto raw = reinterpret_cast<std::byte*>(&element);
+                std::copy_n(
+                    std::execution::par_unseq,
+                    static_cast<std::byte*>(self().Pointer()) + self().current_index,
+                    sizeof(TElement),
+                    raw
+                );
+                return element;
+            }
+
+            auto& operator=(TElement value)
+            {
+                auto raw = reinterpret_cast<std::byte*>(&value);
+                std::copy_n(std::execution::par_unseq,
+                    raw,
+                    sizeof(TElement),
+                    static_cast<std::byte*>(self().Pointer()) + self().current_index
+                );
+                return *this;
+            }
+        } _Index;
+
+        public: auto&& operator[](std::size_t index)
         {
-            get => std::string("Array as memory block at '").append(Platform::Converters::To<std::string>(Pointer)).append("' address.");
+            current_index = index;
+            return _Index;
         }
 
         public: DirectMemoryAsArrayMemoryAdapter(IDirectMemory &memory)
+            :_memory(memory)
         {
-            Platform::Exceptions::EnsureExtensions::ArgumentNotNull(Platform::Exceptions::Ensure::Always, memory, "memory");
-            Platform::Exceptions::EnsureExtensions::ArgumentMeetsCriteria(Platform::Exceptions::Ensure::Always, memory, m => (m.Size % Structure<TElement>.Size) == 0, "memory", "Memory is not aligned to element size.");
-            _memory = memory;
+            using namespace Platform::Exceptions::Ensure;
+            Always::ArgumentMeetsCriteria(
+                memory,
+                [](auto& m) { return (m.Size() % sizeof(TElement)) == 0; },
+                "memory",
+                "Memory is not aligned to element size."
+            );
         }
-
-        protected: void Dispose(bool manual, bool wasDisposed) override
-        {
-            if (!wasDisposed)
-            {
-                _memory.DisposeIfPossible();
-            }
-        }
-    }
+    };
 }
