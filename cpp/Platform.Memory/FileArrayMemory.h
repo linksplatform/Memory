@@ -14,7 +14,7 @@
         //where TElement : struct
     {
         using Self = FileArrayMemory<TElement>;
-        private: std::shared_ptr<std::fstream> _file;
+        private: std::fstream _file;
         private: std::filesystem::path path;
 
         public: std::size_t Size() final
@@ -29,16 +29,16 @@
 
             operator TElement()
             {
-                self()._file->seekg(self().current_index);
+                self()._file.seekg(self().current_index);
                 TElement element;
-                self()._file->read(reinterpret_cast<char*>(&element), sizeof(TElement));
+                self()._file.read(reinterpret_cast<char*>(&element), sizeof(TElement));
                 return element;
             }
 
             auto& operator=(TElement value)
             {
-                self()._file->seekg(self().current_index);
-                self()._file->write(reinterpret_cast<char*>(&value), sizeof(TElement));
+                self()._file.seekg(self().current_index);
+                self()._file.write(reinterpret_cast<char*>(&value), sizeof(TElement));
                 return *this;
             }
         } _Index;
@@ -58,7 +58,7 @@
             : _file(std::forward<decltype(file)>(file)), path(std::forward<decltype(path)>(path)) { }
 
         public: explicit FileArrayMemory(auto&& path)
-            : FileArrayMemory(std::make_shared<std::fstream>(path), path) { }
+            : FileArrayMemory(std::fstream(path), path) { }
 
     };
 }
