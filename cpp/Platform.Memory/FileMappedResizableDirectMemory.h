@@ -57,11 +57,6 @@
             _file.close();
         }
 
-        public: void Flush()
-        {
-            _file.flush();
-        }
-
         public: ~FileMappedResizableDirectMemory() final
         {
             Close();

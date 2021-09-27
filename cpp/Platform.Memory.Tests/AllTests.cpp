@@ -25,11 +25,6 @@ auto main() -> int {
 
     //TemporaryFileMappedResizableDirectMemory a { 4096 };
     //{ std::ofstream{"лооооол.txt"}; }
-    {
-        std::ofstream f{ "ll.txt" };
-        f.flush();
-        f.close();
-    }
 
     FileMappedResizableDirectMemory a { "ll.txt", 4096 };
     DirectMemoryAsArrayMemoryAdapter<int> b(a);
@@ -37,11 +32,8 @@ auto main() -> int {
     auto size = sizeof(int);
 
     b[0*size] = 1337;
-    a.Flush();
     b[1*size] = 228;
-    a.Flush();
     b[2*size] = 177013;
-    a.Flush();
     std::cout << b[0*size] << "\n";
     std::cout << b[1*size] << "\n";
     std::cout << b[2*size] << "\n";
