@@ -24,16 +24,22 @@ jobs:
         with:
           version: "11.0"
 
+      - name: Install GCC
+        uses: egor-tensin/setup-gcc@v1
+        with:
+          version: 10
+          platform: x64
+
       - name: Conan install
         run: pip install conan
 
       - name: Conan setup
         run: |
           conan profile new linksplatform --detect
-          conan profile update settings.compiler=clang linksplatform
-          conan profile update settings.compiler.version=11 linksplatform
+          conan profile update settings.compiler=gcc linksplatform
+          conan profile update settings.compiler.version=10 linksplatform
           conan profile update settings.compiler.libcxx=libstdc++11 linksplatform
-          conan profile update env.CXX=clang++ linksplatform
+          conan profile update env.CXX=g++ linksplatform
           conan profile show linksplatform
       - name: Conan install packages
         run: |
@@ -49,13 +55,13 @@ jobs:
 
       - name: Test C++ and scan-build
         run: |
-          cmake_flags="-DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=clang++ -DLINKS_PLATFORM_TESTS=ON -DCMAKE_CXX_FLAGS=\"-stdlib=libc++\""
+          cmake_flags="-DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++ -DLINKS_PLATFORM_TESTS=ON"
           cmake_build_dir="build"
           cd cpp && mkdir $cmake_build_dir && cd $cmake_build_dir
           conan install .. -if=. -pr=linksplatform --build=missing
           cmake .. $cmake_flags
           cmake --build .
-          scan-build cmake --build .
+#          scan-build cmake --build .
           binaries=bin/*
           for binary in $binaries
           do
