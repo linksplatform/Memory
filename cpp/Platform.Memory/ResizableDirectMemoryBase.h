@@ -36,22 +36,22 @@
             return UsedCapacity();
         }
 
-        public: pointer_t& Pointer() final
+        public: pointer_t& Pointer()
         {
             return _pointer;
         }
 
-        public: const pointer_t& Pointer() const final
+        public: const pointer_t& Pointer() const
         {
             return _pointer;
         }
 
-        public: capacity_t ReservedCapacity() const final
+        public: capacity_t ReservedCapacity() const
         {
             return _reservedCapacity;
         }
 
-        public: void ReservedCapacity(capacity_t value) final
+        public: void ReservedCapacity(capacity_t value)
         {
             using namespace Platform::Ranges;
             using namespace Platform::Exceptions;
@@ -64,12 +64,12 @@
             }
         }
 
-        public: capacity_t UsedCapacity() const final
+        public: capacity_t UsedCapacity() const
         {
             return _usedCapacity;
         }
 
-        public: void UsedCapacity(capacity_t value) final
+        public: void UsedCapacity(capacity_t value)
         {
             using namespace Platform::Ranges;
 
@@ -85,7 +85,7 @@
 
         protected: virtual ~ResizableDirectMemoryBase()
         {
-            _pointer = nullptr;
+            //_pointer = nullptr;
         }
     };
 }

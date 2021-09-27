@@ -1,81 +1,70 @@
 ﻿namespace Platform::Memory
 {
-    public unsafe class FileMappedResizableDirectMemory : public ResizableDirectMemoryBase
+    class FileMappedResizableDirectMemory final : public ResizableDirectMemoryBase
     {
-        private: MemoryMappedFile _file = 0;
-        private: MemoryMappedViewAccessor _accessor = 0;
+        protected: using ResizableDirectMemoryBase::capacity_t;
 
-        protected: std::string Path = 0;
+        private: memory_mapped_file::writable_mmf _file;
 
-        protected: override std::string ObjectName
+        //protected: override std::string ObjectName
+        //{
+        //    get => std::string("File stored memory block at '").append(Path).append("' path.");
+        //}
+
+        public: FileMappedResizableDirectMemory(const std::string& path, capacity_t minimumReservedCapacity)
+            : _file(path.c_str(), memory_mapped_file::mmf_exists_mode::if_exists_just_open)
         {
-            get => std::string("File stored memory block at '").append(Path).append("' path.");
-        }
-
-        public: FileMappedResizableDirectMemory(std::string path, std::int64_t minimumReservedCapacity)
-        {
-            Ensure.Always.ArgumentNotEmptyAndNotWhiteSpace(path, "path");
+            using namespace Platform::Collections::Ensure;
+            Always::ArgumentNotEmptyAndNotWhiteSpace(path, "path", "");
             if (minimumReservedCapacity < MinimumCapacity)
             {
                 minimumReservedCapacity = MinimumCapacity;
             }
             Path = path;
-            auto size = FileHelpers.GetSize(path);
-            ReservedCapacity = size > minimumReservedCapacity ? ((size / minimumReservedCapacity) + 1) * minimumReservedCapacity : minimumReservedCapacity;
-            UsedCapacity = size;
+
+            auto size = std::filesystem::file_size(Path);
+            // TODO: cringe
+            ReservedCapacity(size > minimumReservedCapacity ? ((size / minimumReservedCapacity) + 1) * minimumReservedCapacity : minimumReservedCapacity);
+            UsedCapacity(size);
         }
 
-        public: FileMappedResizableDirectMemory(std::string path) : this(path, MinimumCapacity) { }
-
-        private: void MapFile(std::int64_t capacity)
+        public: void OnReservedCapacityChanged(capacity_t oldReservedCapacity, capacity_t newReservedCapacity) final
         {
-            if (Pointer != IntPtr.0)
-            {
-                return;
-            }
-            _file = MemoryMappedFile.CreateFromFile(Path, FileMode.OpenOrCreate, mapName: {}, capacity, MemoryMappedFileAccess.ReadWrite);
-            _accessor = _file.CreateViewAccessor();
-            std::uint8_t* pointer = {};
-            _accessor.SafeMemoryMappedViewHandle.AcquirePointer(pointer);
-            Pointer = this->IntPtr(pointer);
+            this->UnmapFile();
+            std::filesystem::resize_file(Path, newReservedCapacity);
+            this->MapFile(newReservedCapacity);
+        }
+
+        public: std::filesystem::path Path;
+        public: explicit FileMappedResizableDirectMemory(const std::string& path) : FileMappedResizableDirectMemory(path, MinimumCapacity) { }
+
+        private: void MapFile(capacity_t capacity)
+        {
+            _file.map(0, _file.file_size());
+            Pointer() = static_cast<void*>(_file.data());
         }
 
         private: void UnmapFile()
         {
-            if (this->UnmapFile(Pointer))
-            {
-                Pointer = IntPtr.0;
-            }
+            _file.unmap();
+            Pointer() = nullptr;
         }
 
-        private: bool UnmapFile(IntPtr pointer)
+        // TODO: maybe use rvalue friend function
+        public: void Close()
         {
-            if (pointer == IntPtr.0)
-            {
-                return false;
-            }
-            if (_accessor != nullptr)
-            {
-                _accessor.SafeMemoryMappedViewHandle.ReleasePointer();
-                Disposable.TryDisposeAndResetToDefault(ref _accessor);
-            }
-            Disposable.TryDisposeAndResetToDefault(ref _file);
-            return true;
+            _file.unmap();
+            _file.close();
         }
 
-        protected: void OnReservedCapacityChanged(std::int64_t oldReservedCapacity, std::int64_t newReservedCapacity) override
+        public: void Flush()
         {
-            this->UnmapFile();
-            FileHelpers.SetSize(Path, newReservedCapacity);
-            this->MapFile(newReservedCapacity);
+            _file.flush();
         }
 
-        protected: void DisposePointer(IntPtr pointer, std::int64_t usedCapacity) override
+        public: ~FileMappedResizableDirectMemory() final
         {
-            if (this->UnmapFile(pointer))
-            {
-                FileHelpers.SetSize(Path, usedCapacity);
-            }
+            Close();
         }
     };
 }
