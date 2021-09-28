@@ -40,7 +40,7 @@
         [[no_unique_address]] struct : PropertySetup<Self> {
             using PropertySetup<Self>::self;
 
-            operator TElement&() { return *reinterpret_cast<TElement*>(self().Pointer() + self().current_index); }
+            operator TElement&() { return *(reinterpret_cast<TElement*>(self().Pointer()) + self().current_index); }
 
             auto& operator=(TElement value)
             {
