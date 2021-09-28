@@ -40,27 +40,17 @@
         [[no_unique_address]] struct : PropertySetup<Self> {
             using PropertySetup<Self>::self;
 
-            operator TElement()
+            operator TElement&()
             {
-                TElement element;
-                auto raw = reinterpret_cast<std::byte*>(&element);
-                std::copy_n(
-                    std::execution::par_unseq,
-                    static_cast<std::byte*>(self().Pointer()) + self().current_index,
-                    sizeof(TElement),
-                    raw
-                );
-                return element;
+                auto raw = reinterpret_cast<std::byte*>(self().Pointer());
+                auto non_raw = reinterpret_cast<TElement*>(raw + self().current_index * sizeof(TElement));
+                return *non_raw;
             }
 
             auto& operator=(TElement value)
             {
-                auto raw = reinterpret_cast<std::byte*>(&value);
-                std::copy_n(std::execution::par_unseq,
-                    raw,
-                    sizeof(TElement),
-                    static_cast<std::byte*>(self().Pointer()) + self().current_index
-                );
+                TElement& ref = *this;
+                ref = value;
                 return *this;
             }
         } _Index;
