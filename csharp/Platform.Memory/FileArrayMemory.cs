@@ -16,12 +16,6 @@ namespace Platform.Memory
     {
         #region Fields
 
-        /// <summary>
-        /// <para>
-        /// The file.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private readonly FileStream _file;
 
         #endregion
@@ -69,16 +63,14 @@ namespace Platform.Memory
 
         #region Contructors
 
-        /// <summary>
-        /// <para>Initializes a new instance of the <see cref="FileArrayMemory{TElement}"/> class.</para>
+        private.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="FileArrayMemory{TElement}"/>.</para>
         /// </summary>
         /// <param name="file"><para>File stream.</para><para>Файловый поток.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public FileArrayMemory(FileStream file) => _file = file;
 
-        /// <summary>
-        /// <para>Initializes a new instance of the <see cref="FileArrayMemory{TElement}"/> class.</para>
+        private.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="FileArrayMemory{TElement}"/>.</para>
         /// </summary>
         /// <param name="path"><para>An path to file.</para><para>Путь к файлу.</para></param>

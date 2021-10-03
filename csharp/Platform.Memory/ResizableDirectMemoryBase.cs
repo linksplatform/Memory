@@ -25,26 +25,8 @@ namespace Platform.Memory
 
         #region Fields
 
-        /// <summary>
-        /// <para>
-        /// The pointer.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private IntPtr _pointer;
-        /// <summary>
-        /// <para>
-        /// The reserved capacity.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private long _reservedCapacity;
-        /// <summary>
-        /// <para>
-        /// The used capacity.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private long _usedCapacity;
 
         #endregion
