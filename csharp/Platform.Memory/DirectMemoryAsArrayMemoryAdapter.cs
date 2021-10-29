@@ -16,6 +16,12 @@ namespace Platform.Memory
     {
         #region Fields
 
+        /// <summary>
+        /// <para>
+        /// The memory.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private readonly IDirectMemory _memory;
 
         #endregion
@@ -63,7 +69,8 @@ namespace Platform.Memory
 
         #region Constructors
 
-        private.</para>
+        /// <summary>
+        /// <para>Initializes a new instance of the <see cref="DirectMemoryAsArrayMemoryAdapter{TElement}"/> class.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="DirectMemoryAsArrayMemoryAdapter{TElement}"/>.</para>
         /// </summary>
         /// <param name="memory"><para>An object implementing <see cref="IDirectMemory"/> interface.</para><para>Объект, реализующий интерфейс <see cref="IDirectMemory"/>.</para></param>
