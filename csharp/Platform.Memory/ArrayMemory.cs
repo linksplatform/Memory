@@ -11,12 +11,6 @@ namespace Platform.Memory
     {
         #region Fields
 
-        /// <summary>
-        /// <para>
-        /// The array.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private readonly TElement[] _array;
 
         #endregion
@@ -45,8 +39,7 @@ namespace Platform.Memory
 
         #region Constuctors
 
-        /// <summary>
-        /// <para>Initializes a new instance of the <see cref="ArrayMemory{TElement}"/> class.</para>
+        private.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="ArrayMemory{TElement}"/>.</para>
         /// </summary>
         /// <param name="size"><para>Size in bytes.</para><para>Размер в байтах.</para></param>
