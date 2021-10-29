@@ -24,7 +24,8 @@ namespace Platform.Memory
 
         #region Constructors
 
-        private.</para>
+        /// <summary>
+        /// <para>Initializes a new instance of the <see cref="HeapResizableDirectMemory"/> class.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="HeapResizableDirectMemory"/>.</para>
         /// </summary>
         /// <param name="minimumReservedCapacity"><para>Minimum file size in bytes.</para><para>Минимальный размер файла в байтах.</para></param>
@@ -39,7 +40,8 @@ namespace Platform.Memory
             UsedCapacity = 0;
         }
 
-        private.</para>
+        /// <summary>
+        /// <para>Initializes a new instance of the <see cref="HeapResizableDirectMemory"/> class.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="HeapResizableDirectMemory"/>.</para>
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

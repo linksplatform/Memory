@@ -22,14 +22,16 @@ namespace Platform.Memory
 
         #region Constructors
 
-        private.</para>
+        /// <summary>
+        /// <para>Initializes a new instance of the <see cref="TemporaryFileMappedResizableDirectMemory"/> class.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="TemporaryFileMappedResizableDirectMemory"/>.</para>
         /// </summary>
         /// <param name="minimumReservedCapacity"><para>Minimum file size in bytes.</para><para>Минимальный размер файла в байтах.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public TemporaryFileMappedResizableDirectMemory(long minimumReservedCapacity) : base(System.IO.Path.GetTempFileName(), minimumReservedCapacity) { }
 
-        private.</para>
+        /// <summary>
+        /// <para>Initializes a new instance of the <see cref="TemporaryFileMappedResizableDirectMemory"/> class.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="TemporaryFileMappedResizableDirectMemory"/>.</para>
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

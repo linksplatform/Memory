@@ -17,7 +17,19 @@ namespace Platform.Memory
     {
         #region Fields
 
+        /// <summary>
+        /// <para>
+        /// The file.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private MemoryMappedFile _file;
+        /// <summary>
+        /// <para>
+        /// The accessor.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private MemoryMappedViewAccessor _accessor;
 
         /// <summary>
@@ -41,7 +53,8 @@ namespace Platform.Memory
 
         #region Constructors
 
-        private.</para>
+        /// <summary>
+        /// <para>Initializes a new instance of the <see cref="FileMappedResizableDirectMemory"/> class.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="FileMappedResizableDirectMemory"/>.</para>
         /// </summary>
         /// <param name="path"><para>An path to file.</para><para>Путь к файлу.</para></param>
@@ -60,7 +73,8 @@ namespace Platform.Memory
             UsedCapacity = size;
         }
 
-        private.</para>
+        /// <summary>
+        /// <para>Initializes a new instance of the <see cref="FileMappedResizableDirectMemory"/> class.</para>
         /// <para>Инициализирует новый экземпляр класса <see cref="FileMappedResizableDirectMemory"/>.</para>
         /// </summary>
         /// <param name="path"><para>An path to file.</para><para>Путь к файлу.</para></param>
