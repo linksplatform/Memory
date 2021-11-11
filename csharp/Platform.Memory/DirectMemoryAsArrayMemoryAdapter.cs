@@ -15,6 +15,13 @@ namespace Platform.Memory
         where TElement : struct
     {
         #region Fields
+
+        /// <summary>
+        /// <para>
+        /// The memory.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private readonly IDirectMemory _memory;
 
         #endregion

@@ -16,7 +16,20 @@ namespace Platform.Memory
     public unsafe class FileMappedResizableDirectMemory : ResizableDirectMemoryBase
     {
         #region Fields
+
+        /// <summary>
+        /// <para>
+        /// The file.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private MemoryMappedFile _file;
+        /// <summary>
+        /// <para>
+        /// The accessor.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private MemoryMappedViewAccessor _accessor;
 
         /// <summary>
@@ -71,7 +84,18 @@ namespace Platform.Memory
         #endregion
 
         #region Methods
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Maps the file using the specified capacity.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="capacity">
+        /// <para>The capacity.</para>
+        /// <para></para>
+        /// </param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void MapFile(long capacity)
         {
             if (Pointer != IntPtr.Zero)
@@ -84,7 +108,14 @@ namespace Platform.Memory
             _accessor.SafeMemoryMappedViewHandle.AcquirePointer(ref pointer);
             Pointer = new IntPtr(pointer);
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Unmaps the file.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void UnmapFile()
         {
             if (UnmapFile(Pointer))
@@ -92,7 +123,22 @@ namespace Platform.Memory
                 Pointer = IntPtr.Zero;
             }
         }
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Determines whether this instance unmap file.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <param name="pointer">
+        /// <para>The pointer.</para>
+        /// <para></para>
+        /// </param>
+        /// <returns>
+        /// <para>The bool</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private bool UnmapFile(IntPtr pointer)
         {
             if (pointer == IntPtr.Zero)

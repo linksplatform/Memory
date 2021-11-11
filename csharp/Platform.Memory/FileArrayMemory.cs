@@ -15,6 +15,13 @@ namespace Platform.Memory
         where TElement : struct
     {
         #region Fields
+
+        /// <summary>
+        /// <para>
+        /// The file.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private readonly FileStream _file;
 
         #endregion
