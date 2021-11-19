@@ -2,20 +2,8 @@ using Xunit;
 
 namespace Platform.Memory.Tests
 {
-    /// <summary>
-    /// <para>
-    /// Represents the heap resizable direct memory tests.
-    /// </para>
-    /// <para></para>
-    /// </summary>
     public unsafe class HeapResizableDirectMemoryTests
     {
-        /// <summary>
-        /// <para>
-        /// Tests that correct memory reallocation test.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         [Fact]
         public void CorrectMemoryReallocationTest()
         {
