@@ -45,7 +45,7 @@ jobs:
         run: |
           git clone https://github.com/linksplatform/conan-center-index
           cd conan-center-index && cd recipes
-          git checkout update-interfaces
+          git checkout only-development
           conan create platform.interfaces/all platform.interfaces/0.1.4@ -pr=linksplatform
           git checkout only-development
           conan create platform.converters/all platform.converters/0.1.0@ -pr=linksplatform

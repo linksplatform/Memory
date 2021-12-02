@@ -58,7 +58,7 @@
 
             if (value != _reservedCapacity)
             {
-                Ranges::Ensure::Always::ArgumentInRange(value, Range{_usedCapacity, std::numeric_limits<capacity_t>::max()});
+                Ranges::Always::ArgumentInRange(value, Range{_usedCapacity, std::numeric_limits<capacity_t>::max()});
                 OnReservedCapacityChanged(_reservedCapacity, value);
                 _reservedCapacity = value;
             }
@@ -76,7 +76,7 @@
             if (value != _usedCapacity)
             {
                 // TODO: Use modernize Ranges version
-                Ensure::Always::ArgumentInRange(value, Range(0, _reservedCapacity));
+                Always::ArgumentInRange(value, Range(0, _reservedCapacity));
                 _usedCapacity = value;
             }
         }
