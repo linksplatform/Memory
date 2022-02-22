@@ -14,8 +14,8 @@
         public: FileMappedResizableDirectMemory(const std::string& path, capacity_t minimumReservedCapacity)
             : _file(path.c_str(), memory_mapped_file::mmf_exists_mode::if_exists_just_open)
         {
-            using namespace Platform::Collections::Ensure;
-            Always::ArgumentNotEmptyAndNotWhiteSpace(path, "path", "");
+            using namespace Platform::Collections;
+            Expects(IsWhiteSpace(path));
             if (minimumReservedCapacity < MinimumCapacity)
             {
                 minimumReservedCapacity = MinimumCapacity;
