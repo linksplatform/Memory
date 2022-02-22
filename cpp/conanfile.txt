@@ -1,6 +1,7 @@
 [requires]
 gtest/cci.20210126
 platform.collections/0.1.0
+ms-gsl/4.0.0
 
 [generators]
 cmake
