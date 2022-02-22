@@ -1,5 +1,4 @@
-#ifndef PLATFORM_MEMORY
-#define PLATFORM_MEMORY
+#pragma once
 
 #include <Platform.Collections.h>
 
@@ -27,5 +26,3 @@
 #include "FileMappedResizableDirectMemory.h"
 #include "TemporaryFileMappedResizableDirectMemory.h"
 #include "DirectMemoryAsArrayMemoryAdapter.h"
-
-#endif //PLATFORM_MEMORY
