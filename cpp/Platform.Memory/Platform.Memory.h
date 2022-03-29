@@ -10,6 +10,7 @@
 #include <fstream>
 #include <filesystem>
 #include <gsl/gsl>
+#include <mio/mmap.hpp>
 
 #include "memory_mapped_file.hpp"
 #include "memory_mapped_file.cpp"
