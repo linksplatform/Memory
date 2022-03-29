@@ -12,6 +12,7 @@ list(APPEND LINKS_PLATFORM_EXTRA_FLAGS ${CONAN_USER_PLATFORM.HASHING_suggested_f
 add_library(${PROJECT_NAME}.Library INTERFACE)
 target_include_directories(${PROJECT_NAME}.Library INTERFACE ${PROJECT_NAME})
 target_link_libraries(${PROJECT_NAME}.Library INTERFACE CONAN_PKG::platform.collections)
+target_link_libraries(${PROJECT_NAME}.Library INTERFACE CONAN_PKG::mio)
 target_compile_options(${PROJECT_NAME}.Library INTERFACE ${LINKS_PLATFORM_EXTRA_FLAGS})
 
 if(${LINKS_PLATFORM_TESTS})
