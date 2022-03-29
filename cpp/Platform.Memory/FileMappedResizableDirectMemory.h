@@ -2,26 +2,35 @@
 {
     class FileMappedResizableDirectMemory final : public ResizableDirectMemoryBase
     {
-        protected: using ResizableDirectMemoryBase::capacity_t;
+      using base = ResizableDirectMemoryBase;
+        protected: using base::capacity_t;
 
-        private: memory_mapped_file::writable_mmf _file;
+        private: mio::mmap_sink _file;
 
         //protected: override std::string ObjectName
         //{
         //    get => std::string("File stored memory block at '").append(Path).append("' path.");
         //}
 
+        public:
+          FileMappedResizableDirectMemory (const FileMappedResizableDirectMemory&) = delete;
+          FileMappedResizableDirectMemory& operator= (const FileMappedResizableDirectMemory&) = delete;
+          FileMappedResizableDirectMemory (FileMappedResizableDirectMemory&&) = default;
+
         public: FileMappedResizableDirectMemory(const std::string& path, capacity_t minimumReservedCapacity)
-            : _file(path.c_str(), memory_mapped_file::mmf_exists_mode::if_exists_just_open)
         {
             using namespace Platform::Collections;
             Expects(!IsWhiteSpace(path));
+            if(!std::filesystem::exists(path))
+            {
+              std::ofstream file {path};
+              file.close();
+            }
             if (minimumReservedCapacity < MinimumCapacity)
             {
                 minimumReservedCapacity = MinimumCapacity;
             }
             Path = path;
-
             auto size = std::filesystem::file_size(Path);
             // TODO: cringe
             ReservedCapacity(size > minimumReservedCapacity ? ((size / minimumReservedCapacity) + 1) * minimumReservedCapacity : minimumReservedCapacity);
@@ -40,8 +49,12 @@
 
         private: void MapFile(capacity_t capacity)
         {
-            _file.map(0, _file.file_size());
-            Pointer() = static_cast<void*>(_file.data());
+            if(Pointer() != nullptr)
+            {
+                return;
+            }
+            _file = mio::mmap_sink {Path.c_str()};
+            Pointer() = _file.data();
         }
 
         private: void UnmapFile()
@@ -53,8 +66,7 @@
         // TODO: maybe use rvalue friend function
         public: void Close()
         {
-            _file.unmap();
-            _file.close();
+
         }
 
         public: ~FileMappedResizableDirectMemory() final
