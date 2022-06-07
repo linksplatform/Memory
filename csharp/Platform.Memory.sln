@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Memory", "csharp\Platform.Memory\Platform.Memory.csproj", "{A54434FA-8D77-47CE-AAE5-5DE90FEB0B21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Memory", "Platform.Memory\Platform.Memory.csproj", "{A54434FA-8D77-47CE-AAE5-5DE90FEB0B21}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Memory.Tests", "csharp\Platform.Memory.Tests\Platform.Memory.Tests.csproj", "{491B7E78-7AA7-4434-AE53-6568044BE50A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Memory.Tests", "Platform.Memory.Tests\Platform.Memory.Tests.csproj", "{491B7E78-7AA7-4434-AE53-6568044BE50A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

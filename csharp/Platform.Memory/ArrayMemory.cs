@@ -10,13 +10,6 @@ namespace Platform.Memory
     public class ArrayMemory<TElement> : IArrayMemory<TElement>
     {
         #region Fields
-
-        /// <summary>
-        /// <para>
-        /// The array.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private readonly TElement[] _array;
 
         #endregion

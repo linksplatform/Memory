@@ -5,16 +5,16 @@
 
 # [Memory](https://github.com/linksplatform/Memory)
 
-LinksPlatform's Platform.Memory Class Library contains classes for memory management simplification. Here you can find multiple implementations of [IMemory](https://linksplatform.github.io/Memory/api/Platform.Memory.IMemory.html) interface.
+LinksPlatform's Platform.Memory Class Library contains classes for memory management simplification. Here you can find multiple implementations of [IMemory](https://linksplatform.github.io/Memory/csharp/api/Platform.Memory.IMemory.html) interface.
 
-The data can be accessed using [the raw pointer](https://linksplatform.github.io/Memory/api/Platform.Memory.IDirectMemory.html) or [by element's index](https://linksplatform.github.io/Memory/api/Platform.Memory.IArrayMemory-1.html) and can be stored in volatile memory:
-* [HeapResizableDirect](https://linksplatform.github.io/Memory/api/Platform.Memory.HeapResizableDirectMemory.html),
-* [ArrayMemory](https://linksplatform.github.io/Memory/api/Platform.Memory.ArrayMemory-1.html)
+The data can be accessed using [the raw pointer](https://linksplatform.github.io/Memory/csharp/api/Platform.Memory.IDirectMemory.html) or [by element's index](https://linksplatform.github.io/Memory/csharp/api/Platform.Memory.IArrayMemory-1.html) and can be stored in volatile memory:
+* [HeapResizableDirect](https://linksplatform.github.io/Memory/csharp/api/Platform.Memory.HeapResizableDirectMemory.html),
+* [ArrayMemory](https://linksplatform.github.io/Memory/csharp/api/Platform.Memory.ArrayMemory-1.html)
 
 or in non-volatile memory:
-* [FileMappedResizableDirectMemory](https://linksplatform.github.io/Memory/api/Platform.Memory.FileMappedResizableDirectMemory.html),
-* [TemporaryFileMappedResizableDirectMemory](https://linksplatform.github.io/Memory/api/Platform.Memory.TemporaryFileMappedResizableDirectMemory.html),
-* [FileArrayMemory](https://linksplatform.github.io/Memory/api/Platform.Memory.FileArrayMemory-1.html).
+* [FileMappedResizableDirectMemory](https://linksplatform.github.io/Memory/csharp/api/Platform.Memory.FileMappedResizableDirectMemory.html),
+* [TemporaryFileMappedResizableDirectMemory](https://linksplatform.github.io/Memory/csharp/api/Platform.Memory.TemporaryFileMappedResizableDirectMemory.html),
+* [FileArrayMemory](https://linksplatform.github.io/Memory/csharp/api/Platform.Memory.FileArrayMemory-1.html).
 
 Namespace: [Platform.Memory](https://linksplatform.github.io/Memory/csharp/api/Platform.Memory.html)
 
@@ -22,7 +22,7 @@ Forked from: [Konard/LinksPlatform/Platform/Platform.Memory](https://github.com/
 
 NuGet package: [Platform.Memory](https://www.nuget.org/packages/Platform.Memory)
 
-## [Documentation](https://linksplatform.github.io/Memory)
+## [Documentation](https://linksplatform.github.io/Memory/csharp)
 [PDF file](https://linksplatform.github.io/Memory/csharp/Platform.Memory.pdf) with code for e-readers.
 
 ## Depend on
