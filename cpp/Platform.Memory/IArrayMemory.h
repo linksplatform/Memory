@@ -4,10 +4,9 @@
     template <typename TElement> class IArrayMemory<TElement> : public IMemory
     {
     public:
-        TElement this[std::int64_t index]
-        {
-            get;
-            set;
-        }
+        //virtual TElement& operator[](std::size_t index) {}
+
+        // TODO: impl const
+        //virtual const TElement& operator[](std::size_t index) const {}
     };
 }

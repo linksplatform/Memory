@@ -1,45 +1,62 @@
 ﻿namespace Platform::Memory
 {
-    template <typename ...> class FileArrayMemory;
-    template <typename TElement> class FileArrayMemory<TElement> : public DisposableBase, IArrayMemory<TElement>
-        where TElement : struct
+    template<typename T>
+    struct PropertySetup
     {
-        private: FileStream _file = 0;
+        PropertySetup() = default;
+        PropertySetup(const PropertySetup&) = delete;
+        PropertySetup(PropertySetup&&) = delete;
+        auto&& self() { return reinterpret_cast<T&>(*this); }
+    };
 
-        public: std::int64_t Size()
+    template <typename ...> class FileArrayMemory;
+    template <typename TElement> class FileArrayMemory<TElement> final : public IArrayMemory<TElement>
+        //where TElement : struct
+    {
+        using Self = FileArrayMemory<TElement>;
+        private: std::fstream _file;
+        private: std::filesystem::path path;
+
+        public: std::size_t Size() final
         {
-            return _file.Length;
+            return std::filesystem::file_size(path);
         }
 
-        public: TElement this[std::int64_t index]
-        {
-            get
+        std::size_t current_index = 0;
+        [[no_unique_address]] struct : PropertySetup<Self> {
+            using PropertySetup<Self>::self;
+
+            operator TElement()
             {
-                _file.Seek(Structure<TElement>.Size * index, SeekOrigin.Begin);
-                return _file.ReadOrDefault<TElement>();
+                self()._file.seekg(self().current_index);
+                TElement element;
+                self()._file.read(reinterpret_cast<char*>(&element), sizeof(TElement));
+                return element;
             }
-            set
+
+            auto& operator=(TElement value)
             {
-                _file.Seek(Structure<TElement>.Size * index, SeekOrigin.Begin);
-                _file.Write(value);
+                self()._file.seekg(self().current_index);
+                self()._file.write(reinterpret_cast<char*>(&value), sizeof(TElement));
+                return *this;
             }
-        }
+        } _Index;
 
-        protected: override std::string ObjectName
+        auto&& operator[](std::size_t index)
         {
-            get => "File stored memory block at '{_file.Name}' path.";
+            current_index = index;
+            return _Index;
         }
 
-        public: FileArrayMemory(FileStream file) { _file = file; }
+        //protected: override std::string ObjectName
+        //{
+        //    get => "File stored memory block at '{_file.Name}' path.";
+        //}
 
-        public: FileArrayMemory(std::string path) : this(File.Open(path, FileMode.OpenOrCreate)) { }
+        public: FileArrayMemory(auto&& file, std::filesystem::path path)
+            : _file(std::forward<decltype(file)>(file)), path(std::move(path)) { }
 
-        protected: void Dispose(bool manual, bool wasDisposed) override
-        {
-            if (!wasDisposed)
-            {
-                _file.DisposeIfPossible();
-            }
-        }
-    }
+        public: explicit FileArrayMemory(std::filesystem::path path)
+            : FileArrayMemory(std::fstream(path), path) { }
+    };
 }
