@@ -2,17 +2,14 @@
 {
     class IResizableDirectMemory : public IDirectMemory
     {
+    protected:
+        using capacity_t = std::size_t;
     public:
-        std::int64_t ReservedCapacity
-        {
-            get;
-            set;
-        }
+        virtual capacity_t ReservedCapacity() const = 0;
+        virtual void ReservedCapacity(capacity_t) = 0;
 
-        std::int64_t UsedCapacity
-        {
-            get;
-            set;
-        }
+
+        virtual capacity_t UsedCapacity() const = 0;
+        virtual void UsedCapacity(capacity_t) = 0;
     };
 }

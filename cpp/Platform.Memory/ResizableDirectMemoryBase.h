@@ -1,92 +1,91 @@
 ﻿namespace Platform::Memory
 {
-    class ResizableDirectMemoryBase : public DisposableBase, public IResizableDirectMemory
+    namespace Internal
     {
-        public: inline static const std::int64_t MinimumCapacity = Environment.SystemPageSize;
-
-        private: IntPtr _pointer = 0;
-        private: std::int64_t _reservedCapacity = 0;
-        private: std::int64_t _usedCapacity = 0;
-
-        public: std::int64_t Size
+        std::size_t page_size() noexcept
         {
-            get
+            std::size_t page_size;
+        #if defined(WIN32)
+            SYSTEM_INFO sSysInfo;
+            GetSystemInfo(&sSysInfo);
+            page_size = sSysInfo.dwPageSize;
+        #elif defined(PAGESIZE)
+            page_size = PAGESIZE;
+        #else
+            page_size = sysconf(_SC_PAGESIZE);
+        #endif
+            return page_size;
+        }
+
+        auto PageSize = page_size();
+    }
+
+    class ResizableDirectMemoryBase : public IResizableDirectMemory
+    {
+        protected: using IResizableDirectMemory::pointer_t;
+        protected: using IResizableDirectMemory::capacity_t;
+
+        public: inline static const std::size_t MinimumCapacity = Internal::PageSize;
+
+        private: pointer_t _pointer = nullptr;
+        private: capacity_t _reservedCapacity = 0;
+        private: capacity_t _usedCapacity = 0;
+
+        public: std::size_t Size()
+        {
+            return UsedCapacity();
+        }
+
+        public: pointer_t& Pointer()
+        {
+            return _pointer;
+        }
+
+        public: const pointer_t& Pointer() const
+        {
+            return _pointer;
+        }
+
+        public: capacity_t ReservedCapacity() const
+        {
+            return _reservedCapacity;
+        }
+
+        public: void ReservedCapacity(capacity_t value)
+        {
+            using namespace Platform::Ranges;
+            using namespace Platform::Exceptions;
+
+            if (value != _reservedCapacity)
             {
-                Platform::Disposables::EnsureExtensions::NotDisposed(Platform::Exceptions::Ensure::Always, this);
-                return UsedCapacity;
+                Ranges::Ensure::Always::ArgumentInRange(value, Range{_usedCapacity, std::numeric_limits<capacity_t>::max()});
+                OnReservedCapacityChanged(_reservedCapacity, value);
+                _reservedCapacity = value;
             }
         }
 
-        public: IntPtr Pointer
+        public: capacity_t UsedCapacity() const
         {
-            get
+            return _usedCapacity;
+        }
+
+        public: void UsedCapacity(capacity_t value)
+        {
+            using namespace Platform::Ranges;
+
+            if (value != _usedCapacity)
             {
-                Platform::Disposables::EnsureExtensions::NotDisposed(Platform::Exceptions::Ensure::Always, this);
-                return _pointer;
-            }
-            protected: set
-            {
-                Platform::Disposables::EnsureExtensions::NotDisposed(Platform::Exceptions::Ensure::Always, this);
-                _pointer = value;
+                // TODO: Use modernize Ranges version
+                Ensure::Always::ArgumentInRange(value, Range(0, _reservedCapacity));
+                _usedCapacity = value;
             }
         }
 
-        public: std::int64_t ReservedCapacity
+        protected: virtual void OnReservedCapacityChanged(capacity_t oldReservedCapacity, capacity_t newReservedCapacity) = 0;
+
+        protected: virtual ~ResizableDirectMemoryBase()
         {
-            get
-            {
-                Platform::Disposables::EnsureExtensions::NotDisposed(Platform::Exceptions::Ensure::Always, this);
-                return _reservedCapacity;
-            }
-            set
-            {
-                Platform::Disposables::EnsureExtensions::NotDisposed(Platform::Exceptions::Ensure::Always, this);
-                if (value != _reservedCapacity)
-                {
-                    Platform::Ranges::EnsureExtensions::ArgumentInRange(Platform::Exceptions::Ensure::Always, value, Range<std::int64_t>(_usedCapacity, std::numeric_limits<std::int64_t>::max()));
-                    OnReservedCapacityChanged(_reservedCapacity, value);
-                    _reservedCapacity = value;
-                }
-            }
-        }
-
-        public: std::int64_t UsedCapacity
-        {
-            get
-            {
-                Platform::Disposables::EnsureExtensions::NotDisposed(Platform::Exceptions::Ensure::Always, this);
-                return _usedCapacity;
-            }
-            set
-            {
-                Platform::Disposables::EnsureExtensions::NotDisposed(Platform::Exceptions::Ensure::Always, this);
-                if (value != _usedCapacity)
-                {
-                    Platform::Ranges::EnsureExtensions::ArgumentInRange(Platform::Exceptions::Ensure::Always, value, Range<std::int64_t>(0, _reservedCapacity));
-                    _usedCapacity = value;
-                }
-            }
-        }
-
-        protected: override bool AllowMultipleDisposeCalls
-        {
-            get => true;
-        }
-
-        protected: virtual void OnReservedCapacityChanged(std::int64_t oldReservedCapacity, std::int64_t newReservedCapacity) = 0;
-
-        protected: virtual void DisposePointer(IntPtr pointer, std::int64_t usedCapacity) = 0;
-
-        protected: void Dispose(bool manual, bool wasDisposed) override
-        {
-            if (!wasDisposed)
-            {
-                auto pointer = Interlocked.Exchange(ref _pointer, IntPtr.0);
-                if (pointer != IntPtr.0)
-                {
-                    this->DisposePointer(pointer, _usedCapacity);
-                }
-            }
+            //_pointer = nullptr;
         }
     };
 }
