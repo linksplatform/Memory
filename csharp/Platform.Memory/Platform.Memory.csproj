@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Memory Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Memory</AssemblyTitle>
-    <VersionPrefix>0.3.2</VersionPrefix>
+    <VersionPrefix>0.4.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>net7</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -13,7 +13,7 @@
     <PackageTags>LinksPlatform;Memory;ArrayMemory;DirectMemoryAsArrayMemoryAdapter;FileArrayMemory;FileMappedResizableDirectMemory;HeapResizableDirectMemory;IArrayMemory;IDirectMemory;IMemory;IResizableDirectMemory;ResizableDirectMemoryBase;TemporaryFileMappedResizableDirectMemory;MemoryMappedFiles</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/18469f4d033ee9a5b7b84caab9c585acab2ac519/doc/Avatar-rainbow-icon-64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://linksplatform.github.io/Memory</PackageProjectUrl>
-    <PackageLicenseExpression>Unlicensed</PackageLicenseExpression>
+    <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/linksplatform/Memory</RepositoryUrl>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
@@ -24,15 +24,11 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>.NET 6 support is added.
-Platform.IO dependency is updated from 0.3.1 to 0.3.2.
-Microsoft.SourceLink.GitHub dependency is updated from 1.0.0 to 1.1.1.</PackageReleaseNotes>
+    <PackageReleaseNotes>Target frameworks are changed to net7.
+License is changed to Unlicense.
+Platform.IO dependency is updated from 0.3.2 to 0.5.0.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="All" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
@@ -40,7 +36,7 @@ Microsoft.SourceLink.GitHub dependency is updated from 1.0.0 to 1.1.1.</PackageR
 
   <ItemGroup>
     <PackageReference Include="System.IO.MemoryMappedFiles" Version="4.3.0" />
-    <PackageReference Include="Platform.IO" Version="0.3.2" />
+    <PackageReference Include="Platform.IO" Version="0.5.0" />
   </ItemGroup>
 
 </Project>
