@@ -24,19 +24,17 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Target frameworks are changed to net7.
-License is changed to Unlicense.
-Platform.IO dependency is updated from 0.3.2 to 0.5.0.</PackageReleaseNotes>
+    <PackageReleaseNotes>Platform.IO dependency is updated from 0.3.2 to 0.5.1.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.IO.MemoryMappedFiles" Version="4.3.0" />
-    <PackageReference Include="Platform.IO" Version="0.5.0" />
+    <PackageReference Include="Platform.IO" Version="0.5.1" />
   </ItemGroup>
 
 </Project>
