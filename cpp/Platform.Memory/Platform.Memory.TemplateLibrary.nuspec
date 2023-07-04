@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Platform.Memory.TemplateLibrary</id>
+    <title>LinksPlatform's Platform.Memory Template Library</title>
+    <summary>LinksPlatform's Platform.Memory is a Template Library what contains crossplatform class API for memory mapping.</summary>
+    <description>LinksPlatform's Platform.Memory is a Template Library what contains crossplatform class API for memory mapping. Use Platform.Memory.h file to include the library.</description>
+    <releaseNotes>Initial realise</releaseNotes>
+    <version>0.1.0</version>
+    <authors>konard</authors>
+    <owners>konard</owners>
+    <copyright>konard</copyright>
+    <projectUrl>https://linksplatform.github.io/Memory</projectUrl>
+    <repository type="git" url="https://github.com/linksplatform/Memory" />
+    <icon>images/icon.png</icon>
+    <tags>C++ Memory</tags>
+    <license type="expression">Unlicense</license>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <dependencies>
+      <group targetFramework="native"></group>
+    </dependencies>
+  </metadata>
+</package>
