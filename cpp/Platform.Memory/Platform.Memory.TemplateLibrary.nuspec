@@ -13,7 +13,7 @@
     <projectUrl>https://linksplatform.github.io/Memory</projectUrl>
     <repository type="git" url="https://github.com/linksplatform/Memory" />
     <icon>images/icon.png</icon>
-    <tags>C++ Memory</tags>
+    <tags>C++ Memory Files</tags>
     <license type="expression">Unlicense</license>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <dependencies>
