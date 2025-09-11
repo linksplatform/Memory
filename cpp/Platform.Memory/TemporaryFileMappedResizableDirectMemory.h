@@ -1,6 +1,6 @@
 ﻿namespace Platform::Memory
 {
-    class TemporaryFileMappedResizableDirectMemory final : public ResizableDirectMemoryBase
+    class TemporaryFileMappedResizableDirectMemory final : public Polymorph<TemporaryFileMappedResizableDirectMemory, ResizableDirectMemoryBase>
     {
         using base_t = FileMappedResizableDirectMemory;
         base_t base;

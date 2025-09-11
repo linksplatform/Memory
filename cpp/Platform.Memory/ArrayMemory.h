@@ -1,7 +1,7 @@
 ﻿namespace Platform::Memory
 {
     template <typename ...> class ArrayMemory;
-    template <typename TElement> class ArrayMemory<TElement> : public IArrayMemory<TElement>
+    template <typename TElement> class ArrayMemory<TElement> : public Polymorph<ArrayMemory<TElement>, IArrayMemory<TElement>>
     {
         private: std::vector<TElement> _array{};
 

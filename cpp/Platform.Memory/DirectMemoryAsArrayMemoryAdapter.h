@@ -2,7 +2,7 @@
 {
     template <typename ...> class DirectMemoryAsArrayMemoryAdapter;
     template <typename TElement> class DirectMemoryAsArrayMemoryAdapter<TElement> :
-        public IArrayMemory<TElement>, public IDirectMemory
+        public Polymorph<DirectMemoryAsArrayMemoryAdapter<TElement>, IArrayMemory<TElement>, IDirectMemory>
     {
         using Self = DirectMemoryAsArrayMemoryAdapter<TElement>;
         using IDirectMemory::pointer_t;
@@ -14,12 +14,12 @@
             return _memory.Size();
         }
 
-        public: pointer_t& Pointer()
+        public: IDirectMemory::pointer_t& Pointer()
         {
             return _memory.Pointer();
         }
 
-        public: const pointer_t& Pointer() const
+        public: const IDirectMemory::pointer_t& Pointer() const
         {
             return _memory.Pointer();
         }

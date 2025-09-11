@@ -15,6 +15,7 @@
 #include "memory_mapped_file.hpp"
 #include "memory_mapped_file.cpp"
 
+#include "Polymorph.h"
 #include "IMemory.h"
 #include "IDirectMemory.h"
 #include "IArrayMemory.h"
