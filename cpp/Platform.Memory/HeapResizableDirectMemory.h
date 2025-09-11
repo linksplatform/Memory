@@ -20,7 +20,7 @@
         }
     }
 
-    class HeapResizableDirectMemory final : public ResizableDirectMemoryBase
+    class HeapResizableDirectMemory final : public Polymorph<HeapResizableDirectMemory, ResizableDirectMemoryBase>
     {
         using ResizableDirectMemoryBase::capacity_t;
         //protected: override std::string ObjectName

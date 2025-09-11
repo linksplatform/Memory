@@ -10,7 +10,7 @@
     };
 
     template <typename ...> class FileArrayMemory;
-    template <typename TElement> class FileArrayMemory<TElement> final : public IArrayMemory<TElement>
+    template <typename TElement> class FileArrayMemory<TElement> final : public Polymorph<FileArrayMemory<TElement>, IArrayMemory<TElement>>
         //where TElement : struct
     {
         using Self = FileArrayMemory<TElement>;

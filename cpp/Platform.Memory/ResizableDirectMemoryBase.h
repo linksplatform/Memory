@@ -1,4 +1,6 @@
-﻿namespace Platform::Memory
+#include <type_traits>
+
+namespace Platform::Memory
 {
     namespace Internal
     {
