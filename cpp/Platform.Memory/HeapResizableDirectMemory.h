@@ -67,7 +67,7 @@
 
         public: ~HeapResizableDirectMemory() final
         {
-            delete static_cast<std::byte*>(Pointer());
+            std::free(Pointer());
         }
     };
 }

@@ -35,37 +35,22 @@
         //    get => std::string("Array as memory block at '").append(Platform::Converters::To<std::string>(Pointer)).append("' address.");
         //}
 
-        std::size_t current_index = 0;
-
-        [[no_unique_address]] struct : PropertySetup<Self> {
-            using PropertySetup<Self>::self;
-
-            operator TElement&() { return *(reinterpret_cast<TElement*>(self().Pointer()) + self().current_index); }
-
-            auto& operator=(TElement value)
-            {
-                TElement& ref = *this;
-                ref = value;
-                return *this;
-            }
-        } _Index;
-
-        public: auto&& operator[](std::size_t index)
+        public: TElement& operator[](std::size_t index) override
         {
-            current_index = index;
-            return _Index;
+            return reinterpret_cast<TElement*>(_memory.Pointer())[index];
+        }
+
+        public: const TElement& operator[](std::size_t index) const override
+        {
+            return reinterpret_cast<const TElement*>(_memory.Pointer())[index];
         }
 
         public: DirectMemoryAsArrayMemoryAdapter(IDirectMemory &memory)
             :_memory(memory)
         {
-            using namespace Platform::Exceptions::Ensure;
-            Always::ArgumentMeetsCriteria(
-                memory,
-                [](auto& m) { return (m.Size() % sizeof(TElement)) == 0; },
-                "memory",
-                "Memory is not aligned to element size."
-            );
+            if ((memory.Size() % sizeof(TElement)) != 0) {
+                throw std::invalid_argument("Memory is not aligned to element size.");
+            }
         }
     };
 }

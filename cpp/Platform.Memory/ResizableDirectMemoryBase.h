@@ -54,11 +54,10 @@
         public: void ReservedCapacity(capacity_t value)
         {
             using namespace Platform::Ranges;
-            using namespace Platform::Exceptions;
 
             if (value != _reservedCapacity)
             {
-                Ranges::Ensure::Always::ArgumentInRange(value, Range{_usedCapacity, std::numeric_limits<capacity_t>::max()});
+                Ensure::Always::ArgumentInRange(value, Range{_usedCapacity, std::numeric_limits<capacity_t>::max()});
                 OnReservedCapacityChanged(_reservedCapacity, value);
                 _reservedCapacity = value;
             }
@@ -75,8 +74,7 @@
 
             if (value != _usedCapacity)
             {
-                // TODO: Use modernize Ranges version
-                Ensure::Always::ArgumentInRange(value, Range(0, _reservedCapacity));
+                Ensure::Always::ArgumentInRange(value, Range{capacity_t(0), _reservedCapacity});
                 _usedCapacity = value;
             }
         }
