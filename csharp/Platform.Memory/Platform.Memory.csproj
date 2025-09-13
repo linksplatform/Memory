@@ -10,7 +10,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AssemblyName>Platform.Memory</AssemblyName>
     <PackageId>Platform.Memory</PackageId>
-    <PackageTags>LinksPlatform;Memory;ArrayMemory;DirectMemoryAsArrayMemoryAdapter;FileArrayMemory;FileMappedResizableDirectMemory;HeapResizableDirectMemory;IArrayMemory;IDirectMemory;IMemory;IResizableDirectMemory;ResizableDirectMemoryBase;TemporaryFileMappedResizableDirectMemory;MemoryMappedFiles</PackageTags>
+    <PackageTags>LinksPlatform;Memory;ArrayMemory;DirectMemoryAsArrayMemoryAdapter;FileArrayMemory;FileMappedResizableDirectMemory;HeapResizableDirectMemory;IArrayMemory;IDirectMemory;IMemory;IResizableDirectMemory;ResizableDirectMemoryBase;TemporaryFileMappedResizableDirectMemory;IFixedDirectMemory;FixedDirectMemoryBase;HeapFixedDirectMemory;FileMappedFixedDirectMemory;MemoryMappedFiles</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/18469f4d033ee9a5b7b84caab9c585acab2ac519/doc/Avatar-rainbow-icon-64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://linksplatform.github.io/Memory</PackageProjectUrl>
     <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
