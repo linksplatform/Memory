@@ -19,10 +19,6 @@ namespace Platform.Memory
         private MemoryMappedFile _file;
         private MemoryMappedViewAccessor _accessor;
 
-        /// <summary>
-        /// <para>Gets path to memory mapped file.</para>
-        /// <para>Получает путь к отображенному в памяти файлу.</para>
-        /// </summary>
         protected readonly string Path;
 
         #endregion
