@@ -1,5 +1,5 @@
 [![NuGet Version and Downloads count](https://img.shields.io/nuget/v/Platform.Memory?label=nuget&style=flat)](https://www.nuget.org/packages/Platform.Memory)
-[![Actions Status](https://github.com/linksplatform/Memory/workflows/CD/badge.svg)](https://github.com/linksplatform/Memory/actions?workflow=CD)
+[![Actions Status](https://github.com/linksplatform/Memory/actions/workflows/csharp.yml/badge.svg)](https://github.com/linksplatform/Memory/actions/workflows/csharp.yml)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b50408b8bf1443c6900c4253449d9568)](https://app.codacy.com/gh/linksplatform/Memory?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Memory&utm_campaign=Badge_Grade_Settings)
 [![CodeFactor](https://www.codefactor.io/repository/github/linksplatform/memory/badge)](https://www.codefactor.io/repository/github/linksplatform/memory)
 
