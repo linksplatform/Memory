@@ -32,7 +32,6 @@
             }
             Path = path;
             auto size = std::filesystem::file_size(Path);
-            // TODO: cringe
             ReservedCapacity(size > minimumReservedCapacity ? ((size / minimumReservedCapacity) + 1) * minimumReservedCapacity : minimumReservedCapacity);
             UsedCapacity(size);
         }
@@ -63,7 +62,6 @@
             Pointer() = nullptr;
         }
 
-        // TODO: maybe use rvalue friend function
         public: void Close()
         {
 

@@ -75,7 +75,6 @@
 
             if (value != _usedCapacity)
             {
-                // TODO: Use modernize Ranges version
                 Ensure::Always::ArgumentInRange(value, Range(0, _reservedCapacity));
                 _usedCapacity = value;
             }
