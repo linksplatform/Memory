@@ -22,7 +22,6 @@ namespace Platform.Memory
         #region Properties
 
         /// <inheritdoc/>
-        /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="P:Platform.Memory.IMemory.Size"]/*'/>
         public long Size
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -30,7 +29,6 @@ namespace Platform.Memory
         }
 
         /// <inheritdoc/>
-        /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="P:Platform.Memory.IArrayMemory`1.Item(System.Int64)"]/*'/>
         public TElement this[long index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -33,7 +33,6 @@ namespace Platform.Memory
         #region Properties
 
         /// <inheritdoc/>
-        /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="P:Platform.Memory.IMemory.Size"]/*'/>
         /// <exception cref="ObjectDisposedException"><para>The memory block is disposed.</para><para>Блок памяти уже высвобожден.</para></exception>
         public long Size
         {
@@ -46,7 +45,6 @@ namespace Platform.Memory
         }
 
         /// <inheritdoc/>
-        /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="P:Platform.Memory.IDirectMemory.Pointer"]/*'/>
         /// <exception cref="ObjectDisposedException"><para>The memory block is disposed.</para><para>Блок памяти уже высвобожден.</para></exception>
         public IntPtr Pointer
         {
@@ -65,7 +63,6 @@ namespace Platform.Memory
         }
 
         /// <inheritdoc/>
-        /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="P:Platform.Memory.IResizableDirectMemory.ReservedCapacity"]/*'/>
         /// <exception cref="ObjectDisposedException"><para>The memory block is disposed.</para><para>Блок памяти уже высвобожден.</para></exception>
         /// <exception cref="ArgumentOutOfRangeException"><para>Attempted to set the reserved capacity to a value that is less than the used capacity.</para><para>Была выполнена попытка установить зарезервированную емкость на значение, которое меньше используемой емкости.</para></exception>
         public long ReservedCapacity
@@ -90,7 +87,6 @@ namespace Platform.Memory
         }
 
         /// <inheritdoc/>
-        /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="P:Platform.Memory.IResizableDirectMemory.UsedCapacity"]/*'/>
         /// <exception cref="ObjectDisposedException"><para>The memory block is disposed.</para><para>Блок памяти уже высвобожден.</para></exception>
         /// <exception cref="ArgumentOutOfRangeException"><para>Attempted to set the used capacity to a value that is greater than the reserved capacity or less than zero.</para><para>Была выполнена попытка установить используемую емкость на значение, которое больше, чем зарезервированная емкость или меньше нуля.</para></exception>
         public long UsedCapacity
