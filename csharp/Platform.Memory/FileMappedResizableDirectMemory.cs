@@ -113,7 +113,6 @@ namespace Platform.Memory
         #region ResizableDirectMemoryBase Methods
 
         /// <inheritdoc/>
-        /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="M:Platform.Memory.ResizableDirectMemoryBase.OnReservedCapacityChanged(System.Int64,System.Int64)"]/*'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override void OnReservedCapacityChanged(long oldReservedCapacity, long newReservedCapacity)
         {
@@ -123,7 +122,6 @@ namespace Platform.Memory
         }
 
         /// <inheritdoc/>
-        /// <include file='bin\Release\netstandard2.0\Platform.Memory.xml' path='doc/members/member[@name="M:Platform.Memory.ResizableDirectMemoryBase.DisposePointer(System.IntPtr,System.Int64)"]/*'/>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected override void DisposePointer(IntPtr pointer, long usedCapacity)
         {
